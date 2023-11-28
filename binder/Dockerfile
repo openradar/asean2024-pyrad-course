@@ -1,1 +1,1 @@
-FROM ghcr.io/openradar/ams-open-radar-2023:e5dbb7e5c064
+FROM ghcr.io/openradar/asean2024-pyrad-course:4407379617bd
