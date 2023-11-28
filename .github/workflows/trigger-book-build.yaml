@@ -8,7 +8,7 @@ on:
       - main
 jobs:
   build:
-    uses: ./.github/workflows/build-book-pullrequest.yaml
+    uses: ./.github/workflows/build-book.yaml
     with:
       environment_name: asean2024-pyrad-course
       environment_file: environment.yml
