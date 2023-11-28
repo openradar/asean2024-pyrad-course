@@ -11,7 +11,7 @@ jobs:
   build:
     uses: ./.github/workflows/build-book.yaml
     with:
-      environment_name: ams-open-radar-2023-dev
+      environment_name: asean2024-pyrad-course
       environment_file: environment.yml
       path_to_notebooks: ./
 
