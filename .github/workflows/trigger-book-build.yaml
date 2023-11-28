@@ -1,0 +1,16 @@
+name: trigger-book-build
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    uses: ./.github/workflows/build-book-pullrequest.yaml
+    with:
+      environment_name: asean2024-pyrad-course
+      environment_file: environment.yml
+      path_to_notebooks: ./
+      use_cached_environment: 'false'  # This is default, not strickly needed. Set to 'false' to always build a new environment
