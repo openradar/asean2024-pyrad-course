@@ -10,6 +10,7 @@ dependencies:
   - cartopy
   - pandas
   - xarray
+  - pydda
   - pyart_mch
   - xradar
   - wradlib
@@ -27,7 +28,6 @@ dependencies:
   - pyviz_comms>=2.0
   - nbstripout
   - metpy
-  - pydda
   - zip
   - certifi>=2023.07.22
   - cryptography>=41.0.3
