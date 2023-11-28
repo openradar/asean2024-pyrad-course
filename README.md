@@ -40,7 +40,7 @@ If you are interested in running this material locally on your computer, you wil
 
 (Replace "cookbook-example" with the title of your cookbooks)
 
-1. Clone the `https://github.com/openradar/ams-open-radar-2023` repository:
+1. Clone the `https://github.com/openradar/asean2024-pyrad-course` repository:
 
    ```bash
     git clone https://github.com/openradar/asean2024-pyrad-course.git
