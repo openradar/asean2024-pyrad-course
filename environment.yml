@@ -7,7 +7,6 @@ dependencies:
   - jupyter-book
   - jupyterlab
   - jupyter_server
-  - pyart_mch
   - matplotlib
   - pydda
   - tensorflow
@@ -21,6 +20,7 @@ dependencies:
   - pydda
   - s3fs
   - pyrad_mch
+  - pyart_mch
   - geoviews
   - tensorflow-probability
   - certifi>=2023.07.22
