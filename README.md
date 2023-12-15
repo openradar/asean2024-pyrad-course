@@ -36,6 +36,10 @@ Jupyter](https://foundations.projectpythia.org/foundations/getting-started-jupyt
 
 ### Running on Your Own Machine
 
+In order to be able to run the material you have to have a working installation of
+[conda](https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html) or
+its fully open-source alternative [Miniforge](https://github.com/conda-forge/miniforge).
+
 If you are interested in running this material locally on your computer, you will need to follow this workflow:
 
 (Replace "cookbook-example" with the title of your cookbooks)
