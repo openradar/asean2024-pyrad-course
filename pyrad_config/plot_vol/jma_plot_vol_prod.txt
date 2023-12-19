@@ -1,0 +1,360 @@
+#
+# Product generation configuration
+#
+
+# List of datasets to generate.
+# The detailed specification of each dataset is given below.
+dataSetList STRARR 1
+	dBZ
+
+#    dBZ
+#	ZDR
+#	RhoHV
+#	PhiDP
+#	KDP
+#	V
+#	W
+
+
+
+# ============================================================================
+#               Raw data
+# ============================================================================
+dBZ STRUCT 3
+    type STRING RAW
+    datatype STRING MFCFRADIAL:dBZ,D{}-F{%Y%m%d%H%M%S}
+    products STRUCT 7
+        PPI_EL00 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING dBZ
+            anglenr INT 0
+		PPI_EL01 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING dBZ
+            anglenr INT 1
+		BSCOPE_EL00 STRUCT 3
+            type STRING BSCOPE_IMAGE
+            voltype STRING dBZ
+            anglenr INT 0
+		RHI_AZ000 STRUCT 3
+            type STRING PSEUDORHI_IMAGE
+            voltype STRING dBZ
+            angle FLOAT 0.
+		HIST STRUCT 3
+            type STRING HISTOGRAM
+            voltype STRING dBZ
+			step FLOAT 0.5
+		PPI_MAP_EL00 STRUCT 3
+            type STRING PPI_MAP
+            voltype STRING dBZ
+            anglenr INT 0
+		PPI_MAP_EL01 STRUCT 3
+            type STRING PPI_MAP
+            voltype STRING dBZ
+            anglenr INT 1
+        CAPPI_1000 STRUCT 3
+            type STRING CAPPI_IMAGE
+            voltype STRING dBZ
+            altitude FLOAT 1000.
+
+ZDR STRUCT 3
+    type STRING RAW
+    datatype STRING MFCFRADIAL:ZDR,D{}-F{%Y%m%d%H%M%S}
+    products STRUCT 5
+        PPI_EL00 STRUCT 5
+            type STRING PPI_IMAGE
+            voltype STRING ZDR
+            anglenr INT 0
+			vmin FLOAT -1.
+			vmax FLOAT 3.
+		PPI_EL01 STRUCT 5
+            type STRING PPI_IMAGE
+            voltype STRING ZDR
+            anglenr INT 1
+			vmin FLOAT -1.
+			vmax FLOAT 3.
+		BSCOPE_EL00 STRUCT 5
+            type STRING BSCOPE_IMAGE
+            voltype STRING ZDR
+            anglenr INT 0
+			vmin FLOAT -1.
+			vmax FLOAT 3.
+		RHI_AZ000 STRUCT 5
+            type STRING PSEUDORHI_IMAGE
+            voltype STRING ZDR
+            angle FLOAT 0
+			vmin FLOAT -1.
+			vmax FLOAT 3.
+		HIST STRUCT 3
+            type STRING HISTOGRAM
+            voltype STRING ZDR
+			step FLOAT 0.1
+        CAPPI_1000 STRUCT 3
+            type STRING CAPPI_IMAGE
+            voltype STRING ZDR
+            altitude FLOAT 1000.
+
+RhoHV STRUCT 3
+    type STRING RAW
+    datatype STRING MFCFRADIAL:RhoHV,D{}-F{%Y%m%d%H%M%S}
+    products STRUCT 5
+        PPI_EL00 STRUCT 5
+            type STRING PPI_IMAGE
+            voltype STRING RhoHV
+            anglenr INT 0
+			vmin FLOAT 0.8
+			vmax FLOAT 1.
+		PPI_EL01 STRUCT 5
+            type STRING PPI_IMAGE
+            voltype STRING RhoHV
+            anglenr INT 1
+			vmin FLOAT 0.8
+			vmax FLOAT 1.
+		BSCOPE_EL00 STRUCT 5
+            type STRING BSCOPE_IMAGE
+            voltype STRING RhoHV
+            anglenr INT 0
+			vmin FLOAT 0.8
+			vmax FLOAT 1.
+		RHI_AZ000 STRUCT 5
+            type STRING PSEUDORHI_IMAGE
+            voltype STRING RhoHV
+            angle FLOAT 0.
+			vmin FLOAT 0.8
+			vmax FLOAT 1.
+		HIST STRUCT 2
+            type STRING HISTOGRAM
+            voltype STRING RhoHV
+        CAPPI_1000 STRUCT 3
+            type STRING CAPPI_IMAGE
+            voltype STRING RhoHV
+            altitude FLOAT 1000.
+
+PhiDP STRUCT 3
+    type STRING RAW
+    datatype STRING MFCFRADIAL:PhiDP,D{}-F{%Y%m%d%H%M%S}
+    products STRUCT 5
+        PPI_EL00 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING PhiDP
+            anglenr INT 0
+		PPI_EL01 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING PhiDP
+            anglenr INT 1
+		BSCOPE_EL00 STRUCT 3
+            type STRING BSCOPE_IMAGE
+            voltype STRING PhiDP
+            anglenr INT 0
+		RHI_AZ000 STRUCT 3
+            type STRING PSEUDORHI_IMAGE
+            voltype STRING PhiDP
+            angle FLOAT 0.
+		HIST STRUCT 3
+            type STRING HISTOGRAM
+            voltype STRING PhiDP
+			step FLOAT 1.
+        CAPPI_1000 STRUCT 3
+            type STRING CAPPI_IMAGE
+            voltype STRING PhiDP
+            altitude FLOAT 1000.
+
+KDP STRUCT 3
+    type STRING RAW
+    datatype STRING MFCFRADIAL:KDP,D{}-F{%Y%m%d%H%M%S}
+    products STRUCT 5
+        PPI_EL00 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING KDP
+            anglenr INT 0
+		PPI_EL01 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING KDP
+            anglenr INT 1
+		BSCOPE_EL00 STRUCT 3
+            type STRING BSCOPE_IMAGE
+            voltype STRING KDP
+            anglenr INT 0
+		RHI_AZ000 STRUCT 3
+            type STRING PSEUDORHI_IMAGE
+            voltype STRING KDP
+            angle FLOAT 0.
+		HIST STRUCT 3
+            type STRING HISTOGRAM
+            voltype STRING KDP
+			step FLOAT 0.1
+        CAPPI_1000 STRUCT 3
+            type STRING CAPPI_IMAGE
+            voltype STRING KDP
+            altitude FLOAT 1000.
+
+V STRUCT 3
+    type STRING RAW
+    datatype STRING MFCFRADIAL:V,D{}-F{%Y%m%d%H%M%S}
+    products STRUCT 5
+        PPI_EL00 STRUCT 5
+            type STRING PPI_IMAGE
+            voltype STRING V
+            anglenr INT 0
+			vmin FLOAT -5.
+			vmax FLOAT 5.
+		PPI_EL01 STRUCT 5
+            type STRING PPI_IMAGE
+            voltype STRING V
+            anglenr INT 1
+			vmin FLOAT -60
+			vmax FLOAT 60
+		BSCOPE_EL00 STRUCT 5
+            type STRING BSCOPE_IMAGE
+            voltype STRING V
+            anglenr INT 0
+			vmin FLOAT -5.
+			vmax FLOAT 5.
+		RHI_AZ000 STRUCT 3
+            type STRING PSEUDORHI_IMAGE
+            voltype STRING V
+            angle FLOAT 0.
+		HIST STRUCT 3
+            type STRING HISTOGRAM
+            voltype STRING V
+			step FLOAT 0.5
+        CAPPI_1000 STRUCT 3
+            type STRING CAPPI_IMAGE
+            voltype STRING V
+            altitude FLOAT 1000.
+
+W STRUCT 3
+    type STRING RAW
+    datatype STRING MFCFRADIAL:W,D{}-F{%Y%m%d%H%M%S}
+    products STRUCT 5
+        PPI_EL00 STRUCT 5
+            type STRING PPI_IMAGE
+            voltype STRING W
+            anglenr INT 0
+			vmin FLOAT 0.
+			vmax FLOAT 2.
+		PPI_EL01 STRUCT 5
+            type STRING PPI_IMAGE
+            voltype STRING W
+            anglenr INT 1
+			vmin FLOAT 0.
+			vmax FLOAT 4.
+		BSCOPE_EL00 STRUCT 5
+            type STRING BSCOPE_IMAGE
+            voltype STRING W
+            anglenr INT 0
+			vmin FLOAT 0.
+			vmax FLOAT 2.
+		RHI_AZ000 STRUCT 5
+            type STRING PSEUDORHI_IMAGE
+            voltype STRING W
+            angle FLOAT 0
+			vmin FLOAT 0.
+			vmax FLOAT 2.
+		HIST STRUCT 3
+            type STRING HISTOGRAM
+            voltype STRING W
+			step FLOAT 0.2
+        CAPPI_1000 STRUCT 3
+            type STRING CAPPI_IMAGE
+            voltype STRING W
+            altitude FLOAT 1000.
+
+
+# ============================================================================
+#               overplot
+# ============================================================================
+dBZ_ZDR STRUCT 3
+    type STRING RAW
+    datatype STRARR 2
+        MFCFRADIAL:dBZ,D{}-F{%Y%m%d%H%M%S}
+        MFCFRADIAL:ZDR,D{}-F{%Y%m%d%H%M%S}
+	products STRUCT 2
+        PPI_EL00 STRUCT 5
+            type STRING PPI_CONTOUR_OVERPLOT
+            voltype STRING dBZ
+            anglenr INT 0
+            contourtype STRING ZDR
+            contour_values FLTARR 1
+                1.
+        RHI_AZ180 STRUCT 5
+            type STRING PSEUDORHI_CONTOUR_OVERPLOT
+            voltype STRING dBZ
+            angle FLOAT 180.
+            AziTol FLOAT 0.5
+            contourtype STRING ZDR
+            contour_values FLTARR 1
+                1.
+
+dBZ_RhoHV STRUCT 3
+    type STRING RAW
+    datatype STRARR 2
+        MFCFRADIAL:dBZ,D{}-F{%Y%m%d%H%M%S}
+        MFCFRADIAL:RhoHV,D{}-F{%Y%m%d%H%M%S}
+	products STRUCT 2
+        PPI_EL00 STRUCT 5
+            type STRING PPI_CONTOUR_OVERPLOT
+            voltype STRING dBZ
+            anglenr INT 0
+            contourtype STRING RhoHV
+            contour_values FLTARR 1
+                0.99
+        RHI_AZ180 STRUCT 5
+            type STRING PSEUDORHI_CONTOUR_OVERPLOT
+            voltype STRING dBZ
+            angle FLOAT 180.
+            AziTol FLOAT 0.5
+            contourtype STRING RhoHV
+            contour_values FLTARR 1
+                0.99
+
+
+# ============================================================================
+#               time series
+# ============================================================================
+dBuZ_POI STRUCT 12
+    type STRING POINT_MEASUREMENT
+    datatype STRING MFCFRADIAL:dBuZ,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+    single_point INT 1
+    latlon INT 1
+    truealt INT 0
+    lon FLOAT 7.35
+    lat FLOAT 47.75
+    ele FLOAT 0.7
+    AziTol FLOAT 0.2
+    EleTol FLOAT 0.2
+    RngTol FLOAT 200
+    products STRUCT 1
+        TS STRUCT 2
+            type STRING PLOT_AND_WRITE_POINT
+            voltype STRING dBuZ
+
+
+TH STRUCT 7
+    type STRING TIME_HEIGHT
+    datatype STRARR 4
+        MFCFRADIAL:dBuZ,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+        MFCFRADIAL:ZDRu,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+        MFCFRADIAL:uRhoHV,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+        MFCFRADIAL:uPhiDP,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+    lon FLOAT 7.35
+    lat FLOAT 47.75
+    latlon_tol FLOAT 0.01
+    interp_kind STRING nearest
+    products STRUCT 4
+        dBuZ STRUCT 3
+            type STRING TIME_RANGE
+            voltype STRING dBuZ
+            anglenr INT 0
+        ZDRu STRUCT 3
+            type STRING TIME_RANGE
+            voltype STRING ZDRu
+            anglenr INT 0
+        uRhoHV STRUCT 3
+            type STRING TIME_RANGE
+            voltype STRING uRhoHV
+            anglenr INT 0
+        uPhiDP STRUCT 3
+            type STRING TIME_RANGE
+            voltype STRING uPhiDP
+            anglenr INT 0
