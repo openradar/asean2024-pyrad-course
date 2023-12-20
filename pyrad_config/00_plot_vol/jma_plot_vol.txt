@@ -1,0 +1,47 @@
+#
+# main config file: radar volume plotting examples
+#
+
+# call example:
+# main_process_data.py jma_plot_vol.txt --starttime 20230801200000 --endtime 20230801200000 --cfgpath ./
+
+# Name of this configuration:
+# Will be used in product generation save path
+name STRING PLOT_VOL
+
+# ---------------------------------------------------------
+#  Raw data pathes
+# ---------------------------------------------------------
+
+# Base path of the raw data.
+# Note: Must have a trailing '/'
+datapath STRING ../../data/JMA/
+path_convention STRING ODIM
+
+# Loading of saved datasets
+loadbasepath STRING STRING ../../pyrad_outputs/
+loadname STRING PLOT_VOL
+
+
+# --------------------------------------------
+# Output data
+# -----------------------------------------------
+saveimgbasepath STRING ../../pyrad_outputs/
+
+# Output image format can be any accepted by Matplotlib
+# More than one output formats can be set
+imgformat STRARR 1
+    png
+
+# --------------------------------------------------------
+# configuration files pathes
+# --------------------------------------------------------
+
+# Base path of configuration files
+configpath STRING ./
+
+# Configuration of the radar location and approach direction
+locationConfigFile STRING ./jma_plot_vol_loc.txt
+
+# Configuration of the product generation
+productConfigFile STRING ./jma_plot_vol_prod.txt
