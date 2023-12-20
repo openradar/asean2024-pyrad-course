@@ -1,0 +1,80 @@
+#
+# loc config file
+#
+
+# Names of the radar scans
+ScanList STRARR 14
+    _Gar0p250km0p35deg_PRref_N11_ANAL_cfrad.nc  # masterscan: first scan of a volume
+	_Gar0p250km0p70deg_PRref_N18_ANAL_cfrad.nc
+	_Gar0p250km0p35deg_PRzdr_N11_ANAL_cfrad.nc
+	_Gar0p250km0p70deg_PRzdr_N18_ANAL_cfrad.nc
+	_Gar0p250km0p35deg_PRrhv_N11_ANAL_cfrad.nc
+	_Gar0p250km0p70deg_PRrhv_N18_ANAL_cfrad.nc
+	_Gar0p250km0p35deg_PRpsd_N11_ANAL_cfrad.nc
+	_Gar0p250km0p70deg_PRpsd_N18_ANAL_cfrad.nc
+	_Gar0p250km0p35deg_PRkdp_N11_ANAL_cfrad.nc
+	_Gar0p250km0p70deg_PRkdp_N18_ANAL_cfrad.nc
+	_Gar0p250km0p35deg_PRvel_N11_ANAL_cfrad.nc
+	_Gar0p250km0p70deg_PRvel_N18_ANAL_cfrad.nc
+	_Gar0p250km0p35deg_PRvsw_N11_ANAL_cfrad.nc
+	_Gar0p250km0p70deg_PRvsw_N18_ANAL_cfrad.nc
+
+#	_Gar0p250km0p35deg_PRref_N11_ANAL_cfrad.nc
+#	_Gar0p250km0p35deg_PRzdr_N11_ANAL_cfrad.nc
+#	_Gar0p250km0p35deg_PRrhv_N11_ANAL_cfrad.nc
+#	_Gar0p250km0p35deg_PRpsd_N11_ANAL_cfrad.nc
+#	_Gar0p250km0p35deg_PRkdp_N11_ANAL_cfrad.nc
+#	_Gar0p250km0p35deg_PRvel_N11_ANAL_cfrad.nc
+#	_Gar0p250km0p35deg_PRvsw_N11_ANAL_cfrad.nc
+
+#	_Gar0p250km0p70deg_PRref_N18_ANAL_cfrad.nc
+#	_Gar0p250km0p70deg_PRzdr_N18_ANAL_cfrad.nc
+#	_Gar0p250km0p70deg_PRrhv_N18_ANAL_cfrad.nc
+#	_Gar0p250km0p70deg_PRpsd_N18_ANAL_cfrad.nc
+#	_Gar0p250km0p70deg_PRkdp_N18_ANAL_cfrad.nc
+#	_Gar0p250km0p70deg_PRvel_N18_ANAL_cfrad.nc
+#	_Gar0p250km0p70deg_PRvsw_N18_ANAL_cfrad.nc
+
+
+# Repetition time of the scans [min]
+ScanPeriod INT 5
+
+# identifier of each data type in file name
+DataTypeID STRUCT 7
+    dBZ STRING ref
+    ZDR STRING zdr
+    RhoHV STRING rhv
+	PhiDP STRING psd
+	KDP STRING kdp
+	V STRING vel
+	W STRING vsw
+
+
+# Image config
+xsecImageConfig STRUCT 3
+   xsize      FLOAT  10.      # image size [inches] (default dots per inch (dpi):72)
+   ysize      FLOAT   5.      # image size [inches] (default dots per inch (dpi):72)
+   dpi        INT    72     # dots per inch (72 web quality, 300 print quality)
+
+# Image config
+rhiImageConfig STRUCT 6
+   xsize      FLOAT   9.    # image size [inches]
+   ysize      FLOAT   7.     # image size [inches]
+   xmin       FLOAT 40.0   # Min distance on horizontal axis [km]
+   xmax       FLOAT 50.0   # Max distance on horizontal axis [km]
+   ymin       FLOAT  0.0   # Min distance on vertical axis [km]
+   ymax       FLOAT  2.0   # Max distance on vertical axis [km]
+
+# Image config
+gridMapImageConfig STRUCT 9
+	xsize      FLOAT  10.      # image size [inches] (default dots per inch (dpi):72)
+	ysize      FLOAT   8.      # image size [inches] (default dots per inch (dpi):72)
+	latmin     FLOAT  26   # Min distance on horizontal axis [km]
+	latmax     FLOAT  27.   # Max distance on horizontal axis [km]
+	lonmin     FLOAT  127.5   # Min distance on vertical axis [km]
+	lonmax     FLOAT  128.5   # Max distance on vertical axis [km]
+	exact_limits INT 1
+	mapres     STRING 10m
+	maps STRARR 2
+		countries
+		coastlines

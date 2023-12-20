@@ -1,0 +1,152 @@
+#
+# Product generation configuration
+#
+
+# List of datasets to generate.
+# The detailed specification of each dataset is given below.
+dataSetList STRARR 4
+    l0:grid
+    l1:dBZ_grid
+    l1:RhoHV_grid
+    l1:dBZ_RhoHV_grid
+
+
+
+# ============================================================================
+#               vol2grid
+# ============================================================================
+grid STRUCT 12
+    type STRING VOL2GRID
+    datatype STRARR 2
+        MFCFRADIAL:dBZ,D{}-F{%Y%m%d%H%M%S}
+        MFCFRADIAL:RhoHV,D{}-F{%Y%m%d%H%M%S}
+    xmin FLOAT -30000
+    xmax FLOAT  80000
+    ymin FLOAT -30000
+    ymax FLOAT 100000
+    zmin FLOAT   0
+    zmax FLOAT  10000
+    hres FLOAT   1000
+    vres FLOAT    500
+    MAKE_GLOBAL INT 1
+    SUBSTITUTE_OBJECT INT 1
+
+
+dBZ_grid STRUCT 3
+    type STRING RAW_GRID
+    datatype STRING PROC:dBZ
+    products STRUCT 7
+        HIST STRUCT 3
+            type STRING HISTOGRAM
+            voltype STRING dBZ
+            step FLOAT 1.
+        SURFACE_l2_CONTOUR STRUCT 4
+            type STRING SURFACE_CONTOUR
+            voltype STRING dBZ
+            level INT 2
+            contour_values FLTARR 1
+                30
+        SURFACE_l2 STRUCT 3
+            type STRING SURFACE_IMAGE
+            voltype STRING dBZ
+            level INT 2
+        SURFACE_l2_RAW STRUCT 3
+            type STRING SURFACE_RAW
+            voltype STRING dBZ
+            level INT 2
+        LAT STRUCT 4
+            type STRING LATITUDE_SLICE
+            voltype STRING dBZ
+            lat FLOAT 26.5
+            lon FLOAT 128
+        LON STRUCT 4
+            type STRING LONGITUDE_SLICE
+            voltype STRING dBZ
+            lat FLOAT 26.5
+            lon FLOAT 128
+        LATLON STRUCT 4
+            type STRING CROSS_SECTION
+            voltype STRING dBZ
+            coord1 STRUCT 2
+                lat FLOAT 26
+                lon FLOAT 127.5
+            coord2 STRUCT 2
+                lat FLOAT 27
+                lon FLOAT 128.5
+
+RhoHV_grid STRUCT 3
+    type STRING RAW_GRID
+    datatype STRING PROC:RhoHV
+    products STRUCT 7
+        HIST STRUCT 3
+            type STRING HISTOGRAM
+            voltype STRING RhoHV
+            step FLOAT 1.
+        SURFACE_l2_CONTOUR STRUCT 4
+            type STRING SURFACE_CONTOUR
+            voltype STRING RhoHV
+            level INT 2
+            contour_values FLTARR 1
+                0.99
+        SURFACE_l0 STRUCT 5
+            type STRING SURFACE_IMAGE
+            voltype STRING RhoHV
+            level INT 0
+			vmin FLOAT 0.9
+			vmax FLOAT 1.
+        SURFACE_l2_RAW STRUCT 5
+            type STRING SURFACE_RAW
+            voltype STRING RhoHV
+            level INT 2
+			vmin FLOAT 0.9
+			vmax FLOAT 1.
+        LAT STRUCT 6
+            type STRING LATITUDE_SLICE
+            voltype STRING RhoHV
+            lat FLOAT 26.5
+            lon FLOAT 128
+			vmin FLOAT 0.9
+			vmax FLOAT 1.
+        LON STRUCT 6
+            type STRING LONGITUDE_SLICE
+            voltype STRING RhoHV
+            lat FLOAT 26.5
+            lon FLOAT 128
+			vmin FLOAT 0.9
+			vmax FLOAT 1.
+        LATLON STRUCT 6
+            type STRING CROSS_SECTION
+            voltype STRING RhoHV
+            coord1 STRUCT 2
+                lat FLOAT 26
+                lon FLOAT 127.5
+            coord2 STRUCT 2
+                lat FLOAT 27
+                lon FLOAT 128.5
+			vmin FLOAT 0.9
+			vmax FLOAT 1.
+
+
+# ============================================================================
+#               overplot
+# ============================================================================
+dBZ_RhoHV_grid STRUCT 3
+    type STRING RAW_GRID
+    datatype STRARR 2
+        PROC:dBZ
+        PROC:RhoHV
+	products STRUCT 2
+        SURFACE_l2 STRUCT 5
+            type STRING SURFACE_CONTOUR_OVERPLOT
+            voltype STRING dBZ
+            level INT 2
+            contourtype STRING RhoHV
+            contour_values FLTARR 1
+                0.99
+        SURFACE_l2_OVERPLOT STRUCT 6
+            type STRING SURFACE_OVERPLOT
+            voltype_btm STRING dBZ
+            voltype_top STRING RhoHV
+            level_btm INT 2
+            level_top INT 0
+            alpha FLOAT 0.25
