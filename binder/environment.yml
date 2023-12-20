@@ -1,0 +1,40 @@
+name: asean2024-pyrad-course
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - numpy<1.25
+  - bottleneck
+  - scipy
+  - matplotlib
+  - cartopy
+  - pandas
+  - xarray
+  - pydda
+  - pyart_mch
+  - xradar
+  - wradlib
+  - dask
+  - tqdm
+  - hvplot
+  - rioxarray
+  - geopandas
+  - datashader
+  - pyrad_mch
+  - cookiecutter
+  # this is needed for notebooks
+  - pip
+  - jupyter-book
+  - pyviz_comms>=2.0
+  - nbstripout
+  - metpy
+  - zip
+  - certifi>=2023.07.22
+  - cryptography>=41.0.3
+  - semver>=3.0.1
+  - nbgitpuller
+  - pip
+  - pip:
+      - tornado>=6.3.3
+      - sphinx-pythia-theme
+      - cmweather

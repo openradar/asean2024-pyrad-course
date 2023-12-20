@@ -1,0 +1,169 @@
+#
+# Product generation configuration
+#
+
+# List of datasets to generate.
+# The detailed specification of each dataset is given below.
+dataSetList STRARR 8    
+    l0:hydro_fromMF
+    l0:H_ISO0_GRIB
+    l1:Att_Zphi
+    l2:RR_Z
+    l2:RR_ZKDP
+    l2:RR_ZA
+    l2:RR_hydro
+    l3:Raccu
+           
+
+# ==========================================================================================
+#               Mapping to hydro
+# ==========================================================================================
+# Mapping of the MeteoFrance product into the semi-supervised hydrometeor
+# classes
+hydro_fromMF STRUCT 3
+    type STRING hydroMF_to_hydro
+    datatype STRING ODIM:hydroMF,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+    MAKE_GLOBAL INT 1
+    products STRUCT 1
+        PPI_EL00 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING hydro
+            anglenr INT 0
+
+
+# ==========================================================================================
+#               NWP data
+# ==========================================================================================
+# Creates a height relative to the iso-0 field using a 2D iso-0 field in
+# GRIB format as reference value
+H_ISO0_GRIB STRUCT 3
+    type STRING ISO0_GRIB
+    datatype STRING ODIM:dBZ,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+    MAKE_GLOBAL INT 1
+    products STRUCT 1
+        PPI_EL00 STRUCT 5
+            type STRING PPI_IMAGE
+            voltype STRING H_ISO0
+            anglenr INT 0
+            vmin FLOAT -2000
+            vmax FLOAT 0.
+
+
+# ==========================================================================================
+#               Attenuation correction
+# ==========================================================================================
+Att_Zphi STRUCT 5
+    type STRING ATTENUATION
+    datatype STRARR 4
+        ODIM:dBZ,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+        ODIM:ZDR,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+        ODIM:PhiDP,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+        PROC:H_ISO0
+    ATT_METHOD STRING ZPhi
+    fzl FLOAT 2000.
+    MAKE_GLOBAL INT 1
+    products STRUCT 6
+        PPI_EL00_dBZc STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 0
+            voltype STRING dBZc
+        PPI_EL00_ZDRc STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 0
+            voltype STRING ZDRc
+        PPI_EL00_Ah STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 0
+            voltype STRING Ah
+        PPI_EL00_Adp STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 0
+            voltype STRING Adp
+        PPI_EL00_PIA STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 0
+            voltype STRING PIA
+        PPI_EL00_PIDA STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 0
+            voltype STRING PIDA
+
+
+# ==========================================================================================
+#               Rainfall rate estimation
+# ==========================================================================================
+RR_Z STRUCT 7
+    type STRING RAINRATE
+    RR_METHOD STRING Z
+    alpha FLOAT 0.03646332368608555
+    beta FLOAT 0.625
+    datatype STRING ODIM:dBZ,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+    MAKE_GLOBAL INT 1
+    products STRUCT 1
+        PPI_EL00 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING RR
+            anglenr INT 0
+
+RR_ZKDP STRUCT 8
+    type STRING RAINRATE
+    RR_METHOD STRING ZKDP
+    alphaz FLOAT 0.03646332368608555
+    betaz FLOAT 0.625
+    thresh FLOAT 40.
+    datatype STRARR 2
+        ODIM:dBZ,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+        ODIM:KDP,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+    MAKE_GLOBAL INT 0
+    products STRUCT 1
+        PPI_EL00 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING RR
+            anglenr INT 0
+
+RR_ZA STRUCT 7
+    type STRING RAINRATE
+    RR_METHOD STRING ZA
+    alphaz FLOAT 0.03646332368608555
+    betaz FLOAT 0.625
+    datatype STRARR 2
+        ODIM:dBZ,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+        PROC:Ah
+    MAKE_GLOBAL INT 0
+    products STRUCT 1
+        PPI_EL00 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING RR
+            anglenr INT 0
+
+RR_hydro STRUCT 7
+    type STRING RAINRATE
+    RR_METHOD STRING hydro
+    alphazr FLOAT 0.03646332368608555
+    betazr FLOAT 0.625
+    datatype STRARR 3
+        ODIM:dBZ,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+        PROC:hydro
+        PROC:Ah
+    MAKE_GLOBAL INT 0
+    products STRUCT 1
+        PPI_EL00 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING RR
+            anglenr INT 0
+
+
+# ============================================================================
+#               Rainfall rate accumulation
+# ============================================================================
+Raccu STRUCT 6
+    type STRING RAIN_ACCU
+    datatype STRING PROC:RR
+    period FLOAT 3600.
+    use_nan INT 1
+    nan_value FLOAT 0.
+    products STRUCT 1
+        PPI_EL00 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING Raccu
+            anglenr INT 0

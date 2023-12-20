@@ -1,0 +1,80 @@
+# PRODUCT CONFIG FILE
+# Example of plotting MF PAG data in C/FRadial
+
+# List of datasets to generate.
+# The detailed specification of each dataset is given below.
+dataSetList STRARR 6
+    l0:echoID
+    l1:echoFilter
+    l2:dBZc
+    l2:ZDRc
+    l2:RhoHVc
+    l2:PhiDPc
+
+
+# ============================================================================
+#               echo ID and filtering
+# ============================================================================
+echoID STRUCT 4
+    type STRING SAN
+    datatype STRARR 4
+        MFCFRADIAL:dBuZ,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+        MFCFRADIAL:RhoHV,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+        MFCFRADIAL:ZDR,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+        MFCFRADIAL:uPhiDP,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+    MAKE_GLOBAL INT 1
+	products STRUCT 1
+        PPI_EL00_A STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING echoID
+            anglenr INT 0
+
+echoFilter STRUCT 3
+    type STRING ECHO_FILTER
+    datatype STRARR 5
+        MFCFRADIAL:echoID,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+        MFCFRADIAL:dBuZ,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+        MFCFRADIAL:RhoHV,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+        MFCFRADIAL:ZDR,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+        MFCFRADIAL:uPhiDP,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+    MAKE_GLOBAL INT 1
+
+
+# ============================================================================
+#               filtered data
+# ============================================================================
+dBZc STRUCT 3
+    type STRING RAW
+    datatype STRING PROC:dBZc
+    products STRUCT 1
+        PPI_EL00_A STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING dBZc
+            anglenr INT 0
+
+ZDRc STRUCT 3
+    type STRING RAW
+    datatype STRING PROC:ZDRc
+    products STRUCT 1
+        PPI_EL00_A STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING ZDRc
+            anglenr INT 0
+
+RhoHVc STRUCT 3
+    type STRING RAW
+    datatype STRING PROC:RhoHVc
+    products STRUCT 1
+        PPI_EL00_A STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING RhoHVc
+            anglenr INT 0
+
+PhiDPc STRUCT 3
+    type STRING RAW
+    datatype STRING PROC:PhiDPc
+    products STRUCT 1
+        PPI_EL00_A STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING PhiDPc
+            anglenr INT 0
