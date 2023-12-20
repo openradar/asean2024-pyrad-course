@@ -1,0 +1,31 @@
+# Name of this configuration:
+# Will be used in product generation save path
+name STRING Attenuation
+
+# ---------------------------------------------------------
+#  Raw data pathes
+# ---------------------------------------------------------
+
+# Base path of the raw data.
+# Note: Must have a trailing '/'
+# ('<datapath>/<scanname>/<YYYY-MM-DD>/<YYYYMMDDHHMMSS00datatype>.<ext>')
+datapath STRING ../../data/Attenuation/L/
+
+# --------------------------------------------
+# Output data
+# --------------------------------------------
+saveimgbasepath STRING ../../pyrad_outputs/
+imgformat       STRING png
+
+# --------------------------------------------------------
+# configuration files pathes
+# --------------------------------------------------------
+
+# Base path of configuration files
+configpath STRING ./
+
+# Configuration of the radar location and approach direction
+locationConfigFile STRING ./attenuation_loc.txt
+
+# Configuration of the product generation
+productConfigFile STRING ./attenuation_prod.txt

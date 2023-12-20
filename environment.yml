@@ -1,0 +1,34 @@
+name: asean2024-pyrad-course
+channels:
+  - conda-forge
+  - pyviz
+dependencies:
+  - python
+  - jupyter-book
+  - jupyterlab
+  - jupyter_server
+  - matplotlib
+  - pydda
+  - tensorflow
+  - wradlib
+  - xradar
+  - numpy<1.25
+  - bottleneck
+  - cartopy
+  - metpy
+  - siphon
+  - pydda
+  - s3fs
+  - pyrad_mch
+  - pyart_mch
+  - geoviews
+  - tensorflow-probability
+  - certifi>=2023.07.22
+  - cryptography>=41.0.3
+  - semver>=3.0.1
+  - nbgitpuller
+  - pip
+  - pip:
+      - sphinx-pythia-theme
+      - tornado>=6.3.3
+      - cmweather

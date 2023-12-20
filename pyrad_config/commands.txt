@@ -1,0 +1,11 @@
+# Commands to be run in /scratch/wolfensb/pyrad_courses/asean2024-pyrad-course/pyrad_config/<subfolder>
+
+# DDA
+main_process_data.py dda.txt --cfgpath ./ --starttime 20231127170000 --endtime 20231127180000
+
+# Attenuation
+main_process_data.py attenuation.txt --cfgpath ./ --starttime 20220628072500 --endtime 20220628072500
+
+# Visibility
+main_process_data.py visibility.txt --cfgpath ./ --starttime 20231127170000 --endtime 20231127180000
+main_process_data.py visibility_norad.txt --cfgpath ./

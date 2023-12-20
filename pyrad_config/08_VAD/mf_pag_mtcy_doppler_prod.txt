@@ -1,0 +1,26 @@
+#
+# Product generation configuration
+#
+
+# List of datasets to generate.
+# The detailed specification of each dataset is given below.
+dataSetList STRARR 1
+    VAD
+
+
+# ============================================================================
+#               Doppler processing
+# ============================================================================
+VAD STRUCT 3
+    type STRING VAD
+    datatype STRARR 1
+        MFCFRADIAL:V,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+    products STRUCT 1
+        profile STRUCT 6
+            type STRING WIND_PROFILE
+            heightMin FLOAT 0.
+            heightMax FLOAT 5000.
+            min_ele FLOAT 2
+            vmin FLOAT -60.
+            vmax FLOAT 60.
+
