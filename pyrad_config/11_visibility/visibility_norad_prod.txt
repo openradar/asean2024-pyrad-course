@@ -14,8 +14,8 @@ gecsx STRUCT 18
     datatype STRING dBZ
     demfile STRING swisstopo_DEM.tif
     demproj STRING 21781 # EPSG code, a OGC WKT or Proj4 string, required if projection is not available in demfile metadata
-    az_discretization    FLOAT 2  # numerical step in azimuth in Cartesian visibility estimation [degree]
-    range_discretization FLOAT 1000   # numerical step in range in Cartesian visibility estimation [m]
+    az_discretization    FLOAT 0.2  # numerical step in azimuth in Cartesian visibility estimation [degree]
+    range_discretization FLOAT 100   # numerical step in range in Cartesian visibility estimation [m]
     do_range_weighting INT 1 
     raster_oversampling INT 1
     verbose INT 1
@@ -25,7 +25,7 @@ gecsx STRUCT 18
     azmin        FLOAT 180.        # [deg] minimum azimuth angle
     azmax        FLOAT 360.      # [deg] maximum azimuth angle
     anglestep    FLOAT 1.       # [deg] azimuth angle step
-    range_resolution FLOAT 500. # range resolution 
+    range_resolution FLOAT 75. # range resolution 
     antenna_elevations FLTARR 3 # You can choose here to use only a subset of all available antenna elevations from the radar file (to save time and because you are likely not interested in high elevations, where ivsibility should be good anyway)
             1.0
             1.8
