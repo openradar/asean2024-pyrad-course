@@ -1,0 +1,13 @@
+format: jb-book
+root: README
+parts:
+  - caption: Tool Foundations
+    chapters:
+      - file: notebooks/pyart/README.md
+        sections:
+          - file: notebooks/pyart/pyart-basics
+          - file: notebooks/pyart/pyart-gridding
+          - file: notebooks/pyart/pyart-processing
+      - file: notebooks/pyrad/README.md
+        sections:
+          - file: notebooks/pyrad/description-config
