@@ -21,6 +21,7 @@ dependencies:
   - geopandas
   - datashader
   - pyrad_mch
+  - gdal=3.5.2
   - cookiecutter
   # this is needed for notebooks
   - pip
