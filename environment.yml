@@ -20,7 +20,8 @@ dependencies:
   - rioxarray
   - geopandas
   - datashader
-  - pyrad_mch
+  - pyrad_mch=1.8.7
+  - gdal=3.5.2
   - cookiecutter
   # this is needed for notebooks
   - pip
