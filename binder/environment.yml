@@ -14,6 +14,7 @@ dependencies:
   - pyart_mch
   - xradar
   - wradlib
+  - sphinx=5.0
   - dask
   - tqdm
   - hvplot
