@@ -13,6 +13,11 @@ This content will be used for the Pyrad short Course held at the WMO/ASEAN Weath
 
 Jordi Figueras I Ventura, Daniel Wolfensberger
 
+## Webpage
+
+http://openradarscience.org/asean2024-pyrad-course/
+
+
 ## Running the Notebooks
 
 You can either run the notebook using [Binder](https://mybinder.org/) or on your local machine.
