@@ -226,18 +226,48 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   2 : Create a Cartesian grid and plot it (pyrad_config/01_grid)
+  <a class="reference internal nav-link" href="#ground-clutter-removal-pyrad-config-02-clutter-filter">
+   2 : Ground-clutter removal (pyrad_config/02_clutter_filter)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#kdp-and-specific-attenuation-pyrad-config-04-attenuation">
-   4 : KDP and specific attenuation (pyrad_config/04_attenuation)
+  <a class="reference internal nav-link" href="#compute-kdp-pyrad-config-03-phidp-kdp">
+   3 : Compute KDP (pyrad_config/03_phidp_kdp)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classifiy-hydrometeors-pyrad-config-04-hydroclass">
+   4 : Classifiy hydrometeors (pyrad_config/04_hydroclass)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#melting-layer-detection-pyrad-config-05-ml">
+   5 : Melting layer detection(pyrad_config/05_ml)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quantitative-precipitation-estimation-pyrad-config-06-rr">
+   6 : Quantitative precipitation estimation (pyrad_config/06_rr)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compute-velocity-azimuth-display-pyrad-config-07-vad">
+   7 : Compute velocity azimuth display (pyrad_config/07_VAD)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compute-dual-doppler-estimation-pyrad-config-08-dda">
+   8 : Compute dual-Doppler estimation (pyrad_config/08_DDA)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quasi-vertical-profiles-pyrad-config-09-qvp">
+   9 : Quasi-vertical profiles (pyrad_config/09_QVP)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#radar-visibility-from-a-dem-with-the-gecsx-tool-pyrad-config-11-visibility">
-   11 : Radar visibility from a DEM with the GECSX tool (pyrad_config/11_visibility/)
+   10 : Radar visibility from a DEM with the GECSX tool (pyrad_config/11_visibility/)
   </a>
  </li>
 </ul>
@@ -271,18 +301,48 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   2 : Create a Cartesian grid and plot it (pyrad_config/01_grid)
+  <a class="reference internal nav-link" href="#ground-clutter-removal-pyrad-config-02-clutter-filter">
+   2 : Ground-clutter removal (pyrad_config/02_clutter_filter)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#kdp-and-specific-attenuation-pyrad-config-04-attenuation">
-   4 : KDP and specific attenuation (pyrad_config/04_attenuation)
+  <a class="reference internal nav-link" href="#compute-kdp-pyrad-config-03-phidp-kdp">
+   3 : Compute KDP (pyrad_config/03_phidp_kdp)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classifiy-hydrometeors-pyrad-config-04-hydroclass">
+   4 : Classifiy hydrometeors (pyrad_config/04_hydroclass)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#melting-layer-detection-pyrad-config-05-ml">
+   5 : Melting layer detection(pyrad_config/05_ml)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quantitative-precipitation-estimation-pyrad-config-06-rr">
+   6 : Quantitative precipitation estimation (pyrad_config/06_rr)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compute-velocity-azimuth-display-pyrad-config-07-vad">
+   7 : Compute velocity azimuth display (pyrad_config/07_VAD)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compute-dual-doppler-estimation-pyrad-config-08-dda">
+   8 : Compute dual-Doppler estimation (pyrad_config/08_DDA)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quasi-vertical-profiles-pyrad-config-09-qvp">
+   9 : Quasi-vertical profiles (pyrad_config/09_QVP)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#radar-visibility-from-a-dem-with-the-gecsx-tool-pyrad-config-11-visibility">
-   11 : Radar visibility from a DEM with the GECSX tool (pyrad_config/11_visibility/)
+   10 : Radar visibility from a DEM with the GECSX tool (pyrad_config/11_visibility/)
   </a>
  </li>
 </ul>
@@ -312,7 +372,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p><strong>How to run</strong> : <em>cd pyrad_config/00_plot_vol; main_process_data.py –cfgpath ./ –starttime 20230801000000 –endtime 20230802000000 jma_plot_vol.txt</em></p>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">00</span><span class="n">_plot_vol</span><span class="p">;</span> <span class="n">main_process_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20230801000000</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20230802000000</span> <span class="n">jma_plot_vol</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="create-a-cartesian-grid-and-plot-it-pyrad-config-01-grid">
 <h2>1 : Create a Cartesian grid and plot it (pyrad_config/01_grid)<a class="headerlink" href="#create-a-cartesian-grid-and-plot-it-pyrad-config-01-grid" title="Permalink to this heading">¶</a></h2>
@@ -331,43 +394,189 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p><strong>How to run</strong> : <em>cd pyrad_config/01_grid; main_process_data.py –cfgpath ./ –starttime 20230801000000 –endtime 20230802000000 jma_grid.txt</em></p>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">01</span><span class="n">_grid</span><span class="p">;</span> <span class="n">main_process_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20230801000000</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20230802000000</span> <span class="n">jma_grid</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
 </div>
-<div class="section" id="id1">
-<h2>2 : Create a Cartesian grid and plot it (pyrad_config/01_grid)<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="ground-clutter-removal-pyrad-config-02-clutter-filter">
+<h2>2 : Ground-clutter removal (pyrad_config/02_clutter_filter)<a class="headerlink" href="#ground-clutter-removal-pyrad-config-02-clutter-filter" title="Permalink to this heading">¶</a></h2>
 <hr class="docutils" />
 <p>This pyrad configuration file does the following:</p>
 <ul class="simple">
-<li><p>Read polar reflectivity and RhoHV data from JMA</p></li>
-<li><p>Convert polar data to a Cartesian grid</p></li>
-<li><p>Perform a series of plots from the Cartesian data</p>
+<li><p>Read polar data from MeteoFrance radar (Zh, RhoHV, ZDR, PhiDP)</p></li>
+<li><p>Use this data to detect ground-clutter</p></li>
+<li><p>Remove ground-clutter from the radar data</p></li>
+<li><p>Make PPI plots of filtered Zh, RhoHV, ZDR and PhiDP</p></li>
+</ul>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">02</span><span class="n">_clutter_filter</span><span class="p">;</span> <span class="n">main_process_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20210114101500</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20210114120000</span> <span class="n">mf_pam_mtcy_filter</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="compute-kdp-pyrad-config-03-phidp-kdp">
+<h2>3 : Compute KDP (pyrad_config/03_phidp_kdp)<a class="headerlink" href="#compute-kdp-pyrad-config-03-phidp-kdp" title="Permalink to this heading">¶</a></h2>
+<hr class="docutils" />
+<p>This pyrad configuration file does the following:</p>
+<ul class="simple">
+<li><p>Read polar data from MeteoFrance radar (Zh, RhoHV, ZDR, PhiDP)</p></li>
+<li><p>Read a GRIB iso0 height file from MeteoFrance</p></li>
+<li><p>Correct ground clutter as in 02_clutter_filter</p></li>
+<li><p>Perform smoothing of raw PhiDP</p></li>
+<li><p>Estimate KDP with different methods:</p>
 <ul>
-<li><p>Histogram plot</p></li>
-<li><p>Surfaces at specified heights</p></li>
-<li><p>Latitude slice</p></li>
-<li><p>Longitude slice</p></li>
-<li><p>Cross-section between two points</p></li>
+<li><p>Vulpiani filtering method</p></li>
+<li><p>Maesaka variational method</p></li>
+<li><p>Linear programming method</p></li>
+<li><p>Kalman filter method</p></li>
+<li><p>Moving least-squares filter</p></li>
+</ul>
+</li>
+<li><p>Perform attenuation correction</p>
+<ul>
+<li><p>ZPHI method</p></li>
+<li><p>Philinear method</p></li>
+</ul>
+</li>
+<li><p>Perform PPI plots of KDP, attenuation corrected Zh, specific attenuation, PIA and PIDA</p></li>
+</ul>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">03</span><span class="n">_phidp_kdp</span><span class="p">;</span> <span class="n">main_process_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20210114101500</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20210114120000</span> <span class="n">mf_pam_mtcy_kdp</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="classifiy-hydrometeors-pyrad-config-04-hydroclass">
+<h2>4 : Classifiy hydrometeors (pyrad_config/04_hydroclass)<a class="headerlink" href="#classifiy-hydrometeors-pyrad-config-04-hydroclass" title="Permalink to this heading">¶</a></h2>
+<hr class="docutils" />
+<p>This pyrad configuration file does the following:</p>
+<ul class="simple">
+<li><p>Read polar data from MeteoFrance radar (Zh, RhoHV, ZDR, PhiDP)</p></li>
+<li><p>Read a GRIB iso0 height file from MeteoFrance</p></li>
+<li><p>Compute hydrometeor classification</p>
+<ul>
+<li><p>With semi-supervised method (Besic, 2016)</p></li>
+<li><p>By mapping MeteoFrance operational classification</p></li>
+</ul>
+</li>
+<li><p>Plot PPIs of hydrometeor classification</p></li>
+</ul>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">04</span><span class="n">_hydroclass</span><span class="p">;</span> <span class="n">main_process_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20200516200500</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20200516220000</span> <span class="n">mf_odim_coll_hydro</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="melting-layer-detection-pyrad-config-05-ml">
+<h2>5 : Melting layer detection(pyrad_config/05_ml)<a class="headerlink" href="#melting-layer-detection-pyrad-config-05-ml" title="Permalink to this heading">¶</a></h2>
+<hr class="docutils" />
+<p>This pyrad configuration file does the following:</p>
+<ul class="simple">
+<li><p>Read polar data from MeteoFrance radar (Zh, RhoHV, ZDR, PhiDP)</p></li>
+<li><p>Read a GRIB iso0 height file from MeteoFrance</p></li>
+<li><p>Compute melting layer (ML) extent</p>
+<ul>
+<li><p>With Giangrande method</p></li>
+<li><p>With MeteoFrance method</p></li>
+</ul>
+</li>
+<li><p>Estimate VPR (vertical profile of reflectivity) with MeteoFrance algorithm</p></li>
+<li><p>Correct reflectivity with VPR</p></li>
+<li><p>Create relevant products</p>
+<ul>
+<li><p>Timeseries of ML and VPR</p></li>
+<li><p>PPIs of corrected reflectivity and ML extent overlaid on radar moments</p></li>
+<li><p>Altitude plots of apparent VPR and theoretical VPR</p></li>
 </ul>
 </li>
 </ul>
-<p><strong>How to run</strong> : <em>cd pyrad_config/01_grid; main_process_data.py –cfgpath ./ –starttime 20230801000000 –endtime 20230802000000 jma_grid.txt</em></p>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">05</span><span class="n">_ml</span><span class="p">;</span> <span class="n">main_process_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20200516200500</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20200516220000</span> <span class="n">mf_odim_coll_ml</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
 </div>
-<div class="section" id="kdp-and-specific-attenuation-pyrad-config-04-attenuation">
-<h2>4 : KDP and specific attenuation (pyrad_config/04_attenuation)<a class="headerlink" href="#kdp-and-specific-attenuation-pyrad-config-04-attenuation" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="quantitative-precipitation-estimation-pyrad-config-06-rr">
+<h2>6 : Quantitative precipitation estimation (pyrad_config/06_rr)<a class="headerlink" href="#quantitative-precipitation-estimation-pyrad-config-06-rr" title="Permalink to this heading">¶</a></h2>
 <hr class="docutils" />
 <p>This pyrad configuration file does the following:</p>
 <ul class="simple">
-<li><p>Read raw radar data from one of the Swiss operational C-band radars</p></li>
-<li><p>Plot PPI of reflectivity</p></li>
-<li><p>Perform echo classification and filter clutter</p></li>
-<li><p>Estimate KDP with the Maesaka method</p></li>
-<li><p>Estimate the specific attenuation with the ZPHI method.</p></li>
-<li><p>Create PPI maps of KDP, corrected reflectivity and specific attenuation.</p></li>
+<li><p>Read polar data from MeteoFrance radar (Zh, RhoHV, ZDR, PhiDP)</p></li>
+<li><p>Read a GRIB iso0 height file from MeteoFrance</p></li>
+<li><p>Compute attenuation with ZPHI method</p></li>
+<li><p>Estimate precipitation with 4 methods</p>
+<ul>
+<li><p>From Zh with R-Z relationship</p></li>
+<li><p>From KDP with R-KDP relationship</p></li>
+<li><p>From Ah (specific attenuation) with R-A relationship</p></li>
+<li><p>From hydrometeor classification using different estimators for every class</p></li>
 </ul>
-<p><strong>How to run</strong> : <em>cd pyrad_config/04_attenuation; main_process_data.py –cfgpath ./ –starttime  20220628072500 –endtime 20220628072500 attenuation.txt</em></p>
+</li>
+<li><p>Compute rainfall accumulation over one hour</p></li>
+</ul>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">06</span><span class="n">_rr</span><span class="p">;</span> <span class="n">main_process_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20200516200500</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20200516220000</span> <span class="n">mf_odim_coll_rr</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="compute-velocity-azimuth-display-pyrad-config-07-vad">
+<h2>7 : Compute velocity azimuth display (pyrad_config/07_VAD)<a class="headerlink" href="#compute-velocity-azimuth-display-pyrad-config-07-vad" title="Permalink to this heading">¶</a></h2>
+<hr class="docutils" />
+<p>This pyrad configuration file does the following:</p>
+<ul class="simple">
+<li><p>Read Doppler data from MeteoFrance radar</p></li>
+<li><p>Compute velocity azimuth display (VAD) from Doppler velocity</p></li>
+<li><p>Plot and save (csv) vertical profiles of wind:</p>
+<ul>
+<li><p>U,V,W wind components</p></li>
+<li><p>Wind speed and direction</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">07</span><span class="n">_VAD</span><span class="p">;</span> <span class="n">main_process_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20210114101500</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20210114120000</span> <span class="n">mf_pag_mtcy_doppler</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="compute-dual-doppler-estimation-pyrad-config-08-dda">
+<h2>8 : Compute dual-Doppler estimation (pyrad_config/08_DDA)<a class="headerlink" href="#compute-dual-doppler-estimation-pyrad-config-08-dda" title="Permalink to this heading">¶</a></h2>
+<hr class="docutils" />
+<p>This pyrad configuration file does the following:</p>
+<ul class="simple">
+<li><p>Read polar data from MeteoSwiss C-band and X-band radar</p></li>
+<li><p>Perform ground clutter removal for X-band data</p></li>
+<li><p>Load C-band operational dealiased Doppler velocity</p></li>
+<li><p>Perform dual-Doppler estimation using the pyDDA wrapper with sounding data from wmo:06610 for initial conditions</p></li>
+<li><p>Generate plots:</p>
+<ul>
+<li><p>2D wind arrow maps at 1000, 2000 and 3000 m.a.s.l</p></li>
+<li><p>Cross-sections of U,V and W wind components along runway 32 (RW32) of Zurich Airport</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">08</span><span class="n">_DDA</span><span class="p">;</span> <span class="n">main_process_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20210114101500</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20210114120000</span> <span class="n">mf_pag_mtcy_doppler</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="quasi-vertical-profiles-pyrad-config-09-qvp">
+<h2>9 : Quasi-vertical profiles (pyrad_config/09_QVP)<a class="headerlink" href="#quasi-vertical-profiles-pyrad-config-09-qvp" title="Permalink to this heading">¶</a></h2>
+<hr class="docutils" />
+<p>This pyrad configuration file does the following:</p>
+<ul class="simple">
+<li><p>Perform timeseries of QVP profiles of Zh, ZDR, RHoHV and KDP data from MeteoFrance, using 4 QVP algorithms:</p>
+<ul>
+<li><p>Original QVP algorithm <a class="reference external" href="https://journals.ametsoc.org/view/journals/atot/37/9/jtechD200011.xml#bib60">Ryzhkov et al. (2016)</a></p></li>
+<li><p>Ranged-defined QVP <a class="reference external" href="https://journals.ametsoc.org/view/journals/atot/37/9/jtechD200011.xml#bib76">Tobin and Kumjian (2017)</a></p></li>
+<li><p>Enhanced vertical profile <a class="reference external" href="https://journals.ametsoc.org/view/journals/atot/37/9/jtechD200011.xml#bib10">Bukovčić et al. (2017)</a></p></li>
+<li><p>Slanted vertical profile <a class="reference external" href="https://journals.ametsoc.org/view/journals/atot/37/9/jtechD200011.xml#bib10">Bukovčić et al. (2017)</a></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">09</span><span class="n">_QVP</span><span class="p">;</span> <span class="n">main_process_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20200516200500</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20200516220000</span> <span class="n">mf_odim_coll_qvp</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="radar-visibility-from-a-dem-with-the-gecsx-tool-pyrad-config-11-visibility">
-<h2>11 : Radar visibility from a DEM with the GECSX tool (pyrad_config/11_visibility/)<a class="headerlink" href="#radar-visibility-from-a-dem-with-the-gecsx-tool-pyrad-config-11-visibility" title="Permalink to this heading">¶</a></h2>
+<h2>10 : Radar visibility from a DEM with the GECSX tool (pyrad_config/11_visibility/)<a class="headerlink" href="#radar-visibility-from-a-dem-with-the-gecsx-tool-pyrad-config-11-visibility" title="Permalink to this heading">¶</a></h2>
 <hr class="docutils" />
 <p>This pyrad configuration file does the following:</p>
 <ul class="simple">
@@ -376,11 +585,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Create PPI plots of the clutter and the visibility</p></li>
 <li><p>Create Grid map plots of several other products generated by GECSX (e.g. slope, aspect, min. visible elevation angle,…)</p></li>
 </ul>
-<p><strong>How to run</strong> :</p>
-<ul class="simple">
-<li><p><em>cd pyrad_config/11_visibility/; main_process_gecsx.py –cfgpath ./ visibility_norad.txt</em> (no radar data)</p></li>
-<li><p><em>cd pyrad_config/11_visibility/; main_process_gecsx.py –cfgpath ./ –starttime 20231127170000 –endtime 20231127180000 visibility.txt</em> (with radar data)</p></li>
-</ul>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">11</span><span class="n">_visibility</span><span class="o">/</span><span class="p">;</span> <span class="n">main_process_gecsx</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="n">visibility_norad</span><span class="o">.</span><span class="n">txt</span> <span class="c1"># no radar data</span>
+<span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">11</span><span class="n">_visibility</span><span class="o">/</span><span class="p">;</span> <span class="n">main_process_gecsx</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20231127170000</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20231127180000</span> <span class="n">visibility</span><span class="o">.</span><span class="n">txt</span> <span class="c1"># with radar data</span>
+</pre></div>
+</div>
 </div>
 </div>
 
