@@ -10,7 +10,7 @@
 
 # Name of this configuration:
 # Will be used in product generation save path
-name STRING MF_PAM_MTCY
+name STRING 03_phidp_kdp
 
 # ---------------------------------------------------------
 #  Raw data pathes

@@ -7,7 +7,7 @@
 
 # Name of this configuration:
 # Will be used in product generation save path
-name STRING GRID
+name STRING 01_grid
 
 # ---------------------------------------------------------
 #  Raw data pathes

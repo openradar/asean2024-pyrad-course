@@ -1,0 +1,49 @@
+#
+# main config file: VAD retrieval examples
+#
+
+# IMPORTANT: Adapt the paths to the actual location of your data and config files
+
+# call example:
+# main_process_data.py mf_pag_mtcy_doppler.txt --starttime 20210114100000 --endtime 20210114120000 --cfgpath ${PYRAD_COURSE_PATH}/config/proc_examples/
+
+
+# Name of this configuration:
+# Will be used in product generation save path
+name STRING 07_VAD
+
+# ---------------------------------------------------------
+#  Raw data pathes
+# ---------------------------------------------------------
+
+# Base path of the raw data.
+# Note: Must have a trailing '/'
+datapath STRING ../../data/MF_CFRADIAL/MTCY/
+
+# Loading of saved datasets
+loadbasepath STRING ../../pyrad_outputs/
+loadname STRING MF_PAG_MTCY
+
+
+# --------------------------------------------
+# Output data
+# -----------------------------------------------
+saveimgbasepath STRING ../../pyrad_outputs/
+
+# Output image format can be any accepted by Matplotlib
+# More than one output formats can be set
+imgformat STRARR 1
+    png
+
+# --------------------------------------------------------
+# configuration files pathes
+# --------------------------------------------------------
+
+# Base path of configuration files
+configpath STRING ./
+
+# Configuration of the radar location and approach direction
+locationConfigFile STRING ./mf_pag_mtcy_doppler_loc.txt
+
+# Configuration of the product generation
+productConfigFile STRING ./mf_pag_mtcy_doppler_prod.txt
