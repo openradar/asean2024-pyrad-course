@@ -54,9 +54,12 @@ cover/
 *.mo
 *.pot
 
+<<<<<<< HEAD
 # NetCDF
 *.nc
 
+=======
+>>>>>>> 3fd0f4ca1113e57a8479803102783ba43f0c7e7f
 # Django stuff:
 *.log
 local_settings.py
@@ -161,3 +164,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea#/
 #
+<<<<<<< HEAD
+=======
+pyrad_outputs/
+>>>>>>> 3fd0f4ca1113e57a8479803102783ba43f0c7e7f
