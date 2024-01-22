@@ -1,0 +1,318 @@
+#
+# Product generation configuration
+#
+
+# List of datasets to generate.
+# The detailed specification of each dataset is given below.
+dataSetList STRARR 6
+    l0:H_ISO0_GRIB
+    l0:echoID
+    l1:echoFilter
+    l2:ml_MF
+    l3:ml_MF_plots
+    l4:VPR
+
+
+# ==========================================================================================
+#               NWP data
+# ==========================================================================================
+# Creates a height relative to the iso-0 field using a 2D iso-0 field in
+# GRIB format as reference value
+H_ISO0_GRIB STRUCT 3
+    type STRING ISO0_GRIB
+    datatype STRING ODIM:dBZ,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+    MAKE_GLOBAL INT 1
+    products STRUCT 1
+        PPI_EL03 STRUCT 5
+            type STRING PPI_IMAGE
+            voltype STRING H_ISO0
+            anglenr INT 3
+            vmin FLOAT -2000
+            vmax FLOAT 0.
+
+
+# ==========================================================================================
+#               hydroMF to echoID
+# ==========================================================================================
+echoID STRUCT 4
+    type STRING hydroMF_to_SAN
+    datatype STRING ODIM:hydroMF,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+    MAKE_GLOBAL INT 1
+    products STRUCT 1
+        PPI_EL03 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING echoID
+            anglenr INT 3
+
+
+# ==========================================================================================
+#                 clutter and noise suppression
+# ==========================================================================================
+# echo type 3 : precip, 2 : clutter, 1 : noise
+echoFilter STRUCT 4
+    type STRING ECHO_FILTER
+    datatype STRARR 2
+        PROC:echoID
+        ODIM:RhoHV,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+    echo_type INT 3
+    MAKE_GLOBAL INT 1
+    products STRUCT 1
+        PPI_EL03_RhoHV STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING RhoHVc
+            anglenr INT 1
+
+
+# ==========================================================================================
+#               melting layer detection
+# ==========================================================================================
+ml_Giangrande STRUCT 8
+    type STRING ML_DETECTION
+    ML_METHOD STRING GIANGRANDE
+    datatype STRARR 4
+        ODIM:dBZ,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+        ODIM:ZDR,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+        ODIM:RhoHV,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+        PROC:H_ISO0
+    get_iso0 INT 1
+    percentile_bottom FLOAT 0.2
+    elmin FLOAT 3.
+    MAKE_GLOBAL INT 1
+    products STRUCT 4
+        ML_TS STRUCT 1
+            type STRING ML_TS
+        SAVE_ML STRUCT 1
+            type STRING SAVE_ML
+        EL03_ml STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 3
+            voltype STRING ml
+        EL03_H_ISO0 STRUCT 5
+            type  STRING PPI_IMAGE
+            anglenr INT 3
+            voltype STRING H_ISO0
+            vmin FLOAT -2000
+            vmax FLOAT 0.
+        AZ093_ml STRUCT 4
+            type  STRING PSEUDORHI_IMAGE
+            angle FLOAT 93.
+            AziTol FLOAT 1.
+            voltype STRING ml
+        AZ093_H_ISO0 STRUCT 4
+            type  STRING PSEUDORHI_IMAGE
+            angle FLOAT 93.
+            AziTol FLOAT 1.
+            voltype STRING H_ISO0
+
+ml_Giangrande_plots STRUCT 3
+    type STRING RAW
+    datatype STRARR 4
+        ODIM:dBZ,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+        ODIM:ZDR,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+        ODIM:RhoHV,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+        PROC:ml
+	products STRUCT 3
+        EL03_dBZ STRUCT 5
+            type  STRING PPI_CONTOUR_OVERPLOT
+            anglenr INT 3
+            voltype STRING dBZ
+            contourtype STRING ml
+            contour_values FLTARR 2
+                2
+                4
+        EL03_RhoHV STRUCT 5
+            type  STRING PPI_CONTOUR_OVERPLOT
+            anglenr INT 3
+            voltype STRING RhoHV
+            contourtype STRING ml
+            contour_values FLTARR 2
+                2
+                4
+        EL03_ZDR STRUCT 5
+            type  STRING PPI_CONTOUR_OVERPLOT
+            anglenr INT 3
+            voltype STRING ZDR
+            contourtype STRING ml
+            contour_values FLTARR 2
+                2
+                4
+        AZ093_dBZ STRUCT 6
+            type  STRING PSEUDORHI_CONTOUR_OVERPLOT
+            angle FLOAT 93.
+            AziTol FLOAT 1.
+            voltype STRING dBZ
+            contourtype STRING ml
+            contour_values FLTARR 2
+                2
+                4
+        AZ093_RhoHV STRUCT 6
+            type  STRING PSEUDORHI_CONTOUR_OVERPLOT
+            angle FLOAT 93.
+            AziTol FLOAT 1.
+            voltype STRING RhoHV
+            contourtype STRING ml
+            contour_values FLTARR 2
+                2
+                4
+        AZ093_ZDR STRUCT 6
+            type  STRING PSEUDORHI_CONTOUR_OVERPLOT
+            angle FLOAT 93.
+            AziTol FLOAT 1.
+            voltype STRING ZDR
+            contourtype STRING ml
+            contour_values FLTARR 2
+                2
+                4
+
+ml_MF STRUCT 7
+    type STRING ML_DETECTION
+    ML_METHOD STRING MF
+    datatype STRARR 2
+        PROC:RhoHVc
+        PROC:H_ISO0
+    MAKE_GLOBAL INT 1
+    ml_memory_max FLOAT 6.
+    ml_datatype STRING CFRADIALPYRAD:ml_h,ml_MF,SAVE_RETRIEVED_ML
+    products STRUCT 6
+        ML_TS STRUCT 1
+            type STRING ML_TS
+        SAVE_ML STRUCT 1
+            type STRING SAVE_ML
+        SAVE_RETRIEVED_ML STRUCT 1
+            type STRING SAVE_RETRIEVED_ML
+        SAVE_ML STRUCT 1
+            type STRING SAVE_ML
+        EL03_ml STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 3
+            voltype STRING ml
+        EL03_H_ISO0 STRUCT 5
+            type  STRING PPI_IMAGE
+            anglenr INT 3
+            voltype STRING H_ISO0
+            vmin FLOAT -2000
+            vmax FLOAT 0.
+        AZ093_ml STRUCT 4
+            type  STRING PSEUDORHI_IMAGE
+            angle FLOAT 93.
+            AziTol FLOAT 1.
+            voltype STRING ml
+        AZ093_H_ISO0 STRUCT 4
+            type  STRING PSEUDORHI_IMAGE
+            angle FLOAT 93.
+            AziTol FLOAT 1.
+            voltype STRING H_ISO0
+
+
+ml_MF_plots STRUCT 3
+    type STRING RAW
+    datatype STRARR 4
+        ODIM:dBZ,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+        ODIM:ZDR,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+        ODIM:RhoHV,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+        PROC:ml
+	products STRUCT 3
+        EL03_dBZ STRUCT 5
+            type  STRING PPI_CONTOUR_OVERPLOT
+            anglenr INT 3
+            voltype STRING dBZ
+            contourtype STRING ml
+            contour_values FLTARR 2
+                2
+                4
+        EL03_RhoHV STRUCT 5
+            type  STRING PPI_CONTOUR_OVERPLOT
+            anglenr INT 3
+            voltype STRING RhoHV
+            contourtype STRING ml
+            contour_values FLTARR 2
+                2
+                4
+        EL03_ZDR STRUCT 5
+            type  STRING PPI_CONTOUR_OVERPLOT
+            anglenr INT 3
+            voltype STRING ZDR
+            contourtype STRING ml
+            contour_values FLTARR 2
+                2
+                4
+        AZ093_dBZ STRUCT 6
+            type  STRING PSEUDORHI_CONTOUR_OVERPLOT
+            angle FLOAT 93.
+            AziTol FLOAT 1.
+            voltype STRING dBZ
+            contourtype STRING ml
+            contour_values FLTARR 2
+                2
+                4
+        AZ093_RhoHV STRUCT 6
+            type  STRING PSEUDORHI_CONTOUR_OVERPLOT
+            angle FLOAT 93.
+            AziTol FLOAT 1.
+            voltype STRING RhoHV
+            contourtype STRING ml
+            contour_values FLTARR 2
+                2
+                4
+        AZ093_ZDR STRUCT 6
+            type  STRING PSEUDORHI_CONTOUR_OVERPLOT
+            angle FLOAT 93.
+            AziTol FLOAT 1.
+            voltype STRING ZDR
+            contourtype STRING ml
+            contour_values FLTARR 2
+                2
+                4
+
+
+# ==========================================================================================
+#               VPR correction
+# ==========================================================================================
+VPR STRUCT 11
+    type STRING VPR
+    datatype STRARR 2
+        ODIM:dBZ,D{%Y%m%d????00}-F{%Y%m%d%H%M00}
+        PROC:H_ISO0
+    filter_params INT 1
+    use_ml INT 1
+    ml_datatype STRING CFRADIALPYRAD:ml_h,ml_MF,SAVE_ML
+    vpr_memory_max FLOAT 55.
+    z_datatype STRING CFRADIALPYRAD:all_fields,VPR,SAVE_Z
+    filter_vpr_memory_max FLOAT 55.
+    vpr_theo_datatype STRING CSV:VPR,VPR,VPRtheo
+    MAKE_GLOBAL INT 1
+    products STRUCT 6
+        SAVE_Z STRUCT 2
+            radar_type STRING radar_rhi
+            type STRING SAVEALL
+        VPRtheo STRUCT 1
+            type STRING PLOT_VPR_THEO
+        VPRinfo STRUCT 1
+            type STRING WRITE_VPR_INFO
+        PPI_EL03_dBZc STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING dBZc
+            anglenr INT 3
+        PPI_EL03_VPRcorr STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING VPRcorr
+            anglenr INT 3
+        height_Z STRUCT 8
+            radar_type STRING radar_rhi
+            type STRING PLOT_ALONG_COORD
+            voltype STRING Zlin
+            mode STRING ALONG_RNG
+            data_on_y INT 0
+            use_altitude INT 1
+            fix_elevations FLTARR 5
+                3.6
+                2.2
+                1.4
+                0.8
+                0.4
+            fix_azimuths FLTARR 5
+                180.
+                180.
+                180.
+                180.
+                180.

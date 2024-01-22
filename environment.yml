@@ -13,6 +13,7 @@ dependencies:
   - pydda
   - pyart_mch
   - xradar
+  - pygrib
   - wradlib
   - sphinx=5.0
   - dask

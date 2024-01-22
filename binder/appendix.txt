@@ -1,5 +1,5 @@
 USER root
-RUN echo "export PYART_CONFIG=/home/jovyan/pyrad_config/mch_config.py" >> ~/.profile && \ 
+RUN echo "export PYART_CONFIG=/home/jovyan/pyrad_config/mf_config.py" >> ~/.profile && \ 
     echo "export METRANETLIB_PATH=/home/jovyan/lib/" >> ~/.profile && \
     rm -r /srv/conda/envs/notebook/lib/python3.9/site-packages/pyart_mch-1.8.1.dist-info/ && \
     rm -r /srv/conda/envs/notebook/lib/python3.9/site-packages/pyart && \

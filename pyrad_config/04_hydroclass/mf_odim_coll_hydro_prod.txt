@@ -1,0 +1,75 @@
+#
+# Product generation configuration
+#
+
+# List of datasets to generate.
+# The detailed specification of each dataset is given below.
+dataSetList STRARR 4
+    l0:H_ISO0_GRIB
+    l1:hydroMF
+    l1:hydro_fromMF
+    l1:hydro_semisupervised
+
+
+# ==========================================================================================
+#               NWP data
+# ==========================================================================================
+# Creates a height relative to the iso-0 field using a 2D iso-0 field in
+# GRIB format as reference value
+H_ISO0_GRIB STRUCT 3
+    type STRING ISO0_GRIB
+    datatype STRING ODIM:dBZ,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+    MAKE_GLOBAL INT 1
+    products STRUCT 1
+        PPI_EL03 STRUCT 5
+            type STRING PPI_IMAGE
+            voltype STRING H_ISO0
+            anglenr INT 3
+            vmin FLOAT -2000
+            vmax FLOAT 0.
+
+# ==========================================================================================
+#                 hydrometeor classification products
+# ==========================================================================================
+# Operational MeteoFrance hydrometeor classification product
+hydroMF STRUCT 3
+    type STRING RAW
+    datatype STRING ODIM:hydroMF,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+    products STRUCT 1
+        PPI_EL03 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING hydroMF
+            anglenr INT 3
+
+# Mapping of the MeteoFrance product into the semi-supervised hydrometeor
+# classes
+hydro_fromMF STRUCT 4
+    type STRING hydroMF_to_hydro
+    datatype STRING ODIM:hydroMF,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+    MAKE_GLOBAL INT 0
+    products STRUCT 1
+        PPI_EL03 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING hydro
+            anglenr INT 3
+
+# Semi-supervised hydrometeor classification
+hydro_semisupervised STRUCT 9
+    type STRING HYDROCLASS
+    datatype STRARR 5
+        ODIM:dBZ,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+        ODIM:ZDR,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+        ODIM:RhoHV,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+        ODIM:KDP,D{%Y-%m-%d}-F{%Y%m%d%H%M00}
+        PROC:H_ISO0
+    HYDRO_METHOD STRING SEMISUPERVISED
+    centroids_file STRING centroids_7671.csv
+    compute_entropy INT 0
+    output_distances INT 0
+	vectorize INT 1
+    MAKE_GLOBAL INT 0
+	products STRUCT 1
+        PPI_EL03 STRUCT 3
+            type STRING PPI_IMAGE
+            voltype STRING hydro
+            anglenr INT 3

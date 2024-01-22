@@ -8,7 +8,7 @@
 
 # Name of this configuration:
 # Will be used in product generation save path
-name STRING MF_PAM_MTCY
+name STRING 02_clutter_filter
 
 # ---------------------------------------------------------
 #  Raw data pathes

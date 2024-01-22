@@ -7,7 +7,7 @@
 
 # Name of this configuration:
 # Will be used in product generation save path
-name STRING PLOT_VOL
+name STRING 00_plot_vol
 
 # ---------------------------------------------------------
 #  Raw data pathes
