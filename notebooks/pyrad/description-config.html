@@ -221,6 +221,16 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-cartesian-grid-and-plot-it-pyrad-config-01-grid">
+   1 : Create a Cartesian grid and plot it (pyrad_config/01_grid)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   2 : Create a Cartesian grid and plot it (pyrad_config/01_grid)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#kdp-and-specific-attenuation-pyrad-config-04-attenuation">
    4 : KDP and specific attenuation (pyrad_config/04_attenuation)
   </a>
@@ -253,6 +263,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plot-a-volume-scan-pyrad-config-00-plot-vol">
    0 : Plot a volume scan (pyrad_config/00_plot_vol)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-cartesian-grid-and-plot-it-pyrad-config-01-grid">
+   1 : Create a Cartesian grid and plot it (pyrad_config/01_grid)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   2 : Create a Cartesian grid and plot it (pyrad_config/01_grid)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -293,6 +313,44 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p><strong>How to run</strong> : <em>cd pyrad_config/00_plot_vol; main_process_data.py –cfgpath ./ –starttime 20230801000000 –endtime 20230802000000 jma_plot_vol.txt</em></p>
+</div>
+<div class="section" id="create-a-cartesian-grid-and-plot-it-pyrad-config-01-grid">
+<h2>1 : Create a Cartesian grid and plot it (pyrad_config/01_grid)<a class="headerlink" href="#create-a-cartesian-grid-and-plot-it-pyrad-config-01-grid" title="Permalink to this heading">¶</a></h2>
+<hr class="docutils" />
+<p>This pyrad configuration file does the following:</p>
+<ul class="simple">
+<li><p>Read polar reflectivity and RhoHV data from JMA</p></li>
+<li><p>Convert polar data to a Cartesian grid</p></li>
+<li><p>Perform a series of plots from the Cartesian data</p>
+<ul>
+<li><p>Histogram plot</p></li>
+<li><p>Surfaces at specified heights</p></li>
+<li><p>Latitude slice</p></li>
+<li><p>Longitude slice</p></li>
+<li><p>Cross-section between two points</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>How to run</strong> : <em>cd pyrad_config/01_grid; main_process_data.py –cfgpath ./ –starttime 20230801000000 –endtime 20230802000000 jma_grid.txt</em></p>
+</div>
+<div class="section" id="id1">
+<h2>2 : Create a Cartesian grid and plot it (pyrad_config/01_grid)<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<hr class="docutils" />
+<p>This pyrad configuration file does the following:</p>
+<ul class="simple">
+<li><p>Read polar reflectivity and RhoHV data from JMA</p></li>
+<li><p>Convert polar data to a Cartesian grid</p></li>
+<li><p>Perform a series of plots from the Cartesian data</p>
+<ul>
+<li><p>Histogram plot</p></li>
+<li><p>Surfaces at specified heights</p></li>
+<li><p>Latitude slice</p></li>
+<li><p>Longitude slice</p></li>
+<li><p>Cross-section between two points</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>How to run</strong> : <em>cd pyrad_config/01_grid; main_process_data.py –cfgpath ./ –starttime 20230801000000 –endtime 20230802000000 jma_grid.txt</em></p>
 </div>
 <div class="section" id="kdp-and-specific-attenuation-pyrad-config-04-attenuation">
 <h2>4 : KDP and specific attenuation (pyrad_config/04_attenuation)<a class="headerlink" href="#kdp-and-specific-attenuation-pyrad-config-04-attenuation" title="Permalink to this heading">¶</a></h2>

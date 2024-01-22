@@ -525,7 +525,7 @@ const thebe_selector_output = ".output, .cell_output"
                                  <span class="n">rhv_field</span> <span class="o">=</span> <span class="s1">&#39;uncorrected_cross_correlation_ratio&#39;</span><span class="p">,</span>
                                  <span class="n">temp_field</span> <span class="o">=</span> <span class="s1">&#39;temperature&#39;</span><span class="p">)</span>
 
-<span class="n">radar</span><span class="o">.</span><span class="n">add_field</span><span class="p">(</span><span class="s1">&#39;radar_echo_classification&#39;</span><span class="p">,</span> <span class="n">hydro</span><span class="p">)</span>
+<span class="n">radar</span><span class="o">.</span><span class="n">add_field</span><span class="p">(</span><span class="s1">&#39;radar_echo_classification&#39;</span><span class="p">,</span> <span class="n">hydro</span><span class="p">[</span><span class="s1">&#39;hydro&#39;</span><span class="p">])</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">display</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">RadarDisplay</span><span class="p">(</span><span class="n">radar</span><span class="p">)</span>
@@ -546,37 +546,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">19</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">centroids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">13.8231</span><span class="p">,</span><span class="mf">0.2514</span><span class="p">,</span><span class="mf">0.0644</span><span class="p">,</span><span class="mf">0.9861</span><span class="p">,</span><span class="mf">1380.6</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="p">[</span><span class="mf">3.0239</span><span class="p">,</span><span class="mf">0.1971</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.9661</span><span class="p">,</span><span class="mf">1464.1</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="p">[</span><span class="mf">4.9447</span><span class="p">,</span><span class="mf">0.1142</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.9787</span><span class="p">,</span><span class="o">-</span><span class="mf">974.7</span><span class="p">],</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="p">[</span><span class="mf">52.6547</span><span class="p">,</span><span class="mf">2.7054</span><span class="p">,</span><span class="mf">2.5101</span><span class="p">,</span><span class="mf">0.9765</span><span class="p">,</span><span class="o">-</span><span class="mf">1114.6</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="p">[</span><span class="mf">46.4998</span><span class="p">,</span><span class="mf">0.1978</span><span class="p">,</span><span class="mf">0.6431</span><span class="p">,</span><span class="mf">0.9845</span><span class="p">,</span><span class="mf">1010.1</span><span class="p">]])</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">hydro</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">retrieve</span><span class="o">.</span><span class="n">hydroclass_semisupervised</span><span class="p">(</span><span class="n">radar</span><span class="p">,</span> <span class="n">mass_centers</span> <span class="o">=</span> <span class="n">centroids</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>                                  <span class="n">refl_field</span> <span class="o">=</span>  <span class="s1">&#39;corrected_reflectivity&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>                                  <span class="n">zdr_field</span> <span class="o">=</span> <span class="s1">&#39;corrected_differential_reflectivity&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span>                                  <span class="n">kdp_field</span> <span class="o">=</span> <span class="s1">&#39;specific_differential_phase&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span>                                  <span class="n">rhv_field</span> <span class="o">=</span> <span class="s1">&#39;uncorrected_cross_correlation_ratio&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>                                  <span class="n">temp_field</span> <span class="o">=</span> <span class="s1">&#39;temperature&#39;</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">19</span> <span class="n">radar</span><span class="o">.</span><span class="n">add_field</span><span class="p">(</span><span class="s1">&#39;radar_echo_classification&#39;</span><span class="p">,</span> <span class="n">hydro</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="n">display</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">RadarDisplay</span><span class="p">(</span><span class="n">radar</span><span class="p">)</span>
-
-<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/core/radar.py:805,</span> in <span class="ni">Radar.add_field</span><span class="nt">(self, field_name, dic, replace_existing)</span>
-<span class="g g-Whitespace">    </span><span class="mi">803</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">804</span> <span class="k">if</span> <span class="s1">&#39;data&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dic</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">805</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;dic must contain a &#39;data&#39; key&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">806</span> <span class="k">if</span> <span class="n">dic</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nrays</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ngates</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">807</span>     <span class="n">t</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">808</span>         <span class="bp">self</span><span class="o">.</span><span class="n">nrays</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ngates</span><span class="p">,</span> <span class="n">dic</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">809</span>         <span class="n">dic</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-
-<span class="ne">KeyError</span>: &quot;dic must contain a &#39;data&#39; key&quot;
-</pre></div>
-</div>
+<img alt="../../_images/72755d3886b15c5fb5fd9d2621a179b1647a4384f6d72ff116122afe46a6e155.png" src="../../_images/72755d3886b15c5fb5fd9d2621a179b1647a4384f6d72ff116122afe46a6e155.png" />
 </div>
 </div>
 <p>Note that the plotting commands are slightly more complicated due to the categorical colormap.</p>
@@ -636,6 +606,32 @@ There was indeed intense hail at the ground on that day.</p>
 <span class="n">display</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cartopy</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">RIVERS</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/graph/radarmapdisplay.py:287: UserWarning: No projection was defined for the axes. Overridding defined axes and using default axes with projection Lambert Conformal.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/10m_cultural/ne_10m_admin_1_states_provinces_lines.zip
+  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f5ab8135df0&gt;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/10m_cultural/ne_10m_admin_0_countries.zip
+  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/10m_physical/ne_10m_lakes.zip
+  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/10m_physical/ne_10m_rivers_lake_centerlines.zip
+  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
+</pre></div>
+</div>
+<img alt="../../_images/1a8b30c43195f42f94739d065ed6cb122d80420a4dae3c0a926779bc5d6dd6ce.png" src="../../_images/1a8b30c43195f42f94739d065ed6cb122d80420a4dae3c0a926779bc5d6dd6ce.png" />
 </div>
 </div>
 <p>Note that we didn’t estimate precipitation intensity at the ground but only aloft. Within the thunderstorm precipitation intensity is extremely high. This is likely too high because QPE in wet hail is very uncertain. However, even the operational QPE algorithm at MeteoSwiss estimated precipitation intensities at the ground close to 120 mm/h.</p>
