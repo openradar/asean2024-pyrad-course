@@ -3,5 +3,5 @@ RUN echo "export PYART_CONFIG=/home/jovyan/pyrad_config/mf_config.py" >> ~/.prof
     echo "export METRANETLIB_PATH=/home/jovyan/lib/" >> ~/.profile && \
     rm -r /srv/conda/envs/notebook/lib/python3.9/site-packages/pyart_mch-1.8.1.dist-info/ && \
     rm -r /srv/conda/envs/notebook/lib/python3.9/site-packages/pyart && \
-    pip install pyart_mch==1.8.5 && \
-    pip install pyrad_mch==1.8.7
+    pip install pyart_mch==1.8.6 && \
+    pip install pyrad_mch==1.8.8
