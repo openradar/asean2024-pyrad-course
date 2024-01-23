@@ -11,7 +11,7 @@ dependencies:
   - pandas
   - xarray
   - pydda
-  - pyart_mch
+  - pyart_mch==1.8.6
   - xradar
   - pygrib
   - wradlib
@@ -22,7 +22,7 @@ dependencies:
   - rioxarray
   - geopandas
   - datashader
-  - pyrad_mch=1.8.7
+  - pyrad_mch=1.8.8
   - gdal=3.5.2
   - cookiecutter
   # this is needed for notebooks

@@ -3,9 +3,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
-*.so
-
 # Distribution / packaging
 .Python
 build/
@@ -164,7 +161,3 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea#/
 #
-<<<<<<< HEAD
-=======
-pyrad_outputs/
->>>>>>> 3fd0f4ca1113e57a8479803102783ba43f0c7e7f
