@@ -350,7 +350,6 @@ Jupyter</a>.</p>
 <a class="reference external" href="https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html">conda</a> or
 its fully open-source alternative <a class="reference external" href="https://github.com/conda-forge/miniforge">Miniforge</a>.</p>
 <p>If you are interested in running this material locally on your computer, you will need to follow this workflow:</p>
-<p>(Replace “cookbook-example” with the title of your cookbooks)</p>
 <ol class="arabic">
 <li><p>Clone the <code class="docutils literal notranslate"><span class="pre">https://github.com/openradar/asean2024-pyrad-course</span></code> repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/openradar/asean2024-pyrad-course.git
@@ -365,6 +364,13 @@ its fully open-source alternative <a class="reference external" href="https://gi
 <li><p>Create and activate your conda environment from the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
 conda<span class="w"> </span>activate<span class="w"> </span>asean2024-pyrad-course
+</pre></div>
+</div>
+</li>
+<li><p>Finally define some environment variables that are required for some workflows</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>CWD=&quot;$(cd &quot;$(dirname &quot;$1&quot;)&quot;; pwd -P)/$(basename &quot;$1&quot;)&quot;
+export PYART_CONFIG=$CWD/pyrad_config/mf_config.py
+export METRANETLIB_PATH=$CWD/lib/
 </pre></div>
 </div>
 </li>

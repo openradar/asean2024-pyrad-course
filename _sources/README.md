@@ -47,8 +47,6 @@ its fully open-source alternative [Miniforge](https://github.com/conda-forge/min
 
 If you are interested in running this material locally on your computer, you will need to follow this workflow:
 
-(Replace "cookbook-example" with the title of your cookbooks)
-
 1. Clone the `https://github.com/openradar/asean2024-pyrad-course` repository:
 
    ```bash
@@ -63,4 +61,10 @@ If you are interested in running this material locally on your computer, you wil
    ```bash
    conda env create -f environment.yml
    conda activate asean2024-pyrad-course
+   ```
+1. Finally define some environment variables that are required for some workflows
+   ```
+   CWD="$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")"
+   export PYART_CONFIG=$CWD/pyrad_config/mf_config.py
+   export METRANETLIB_PATH=$CWD/lib/
    ```
