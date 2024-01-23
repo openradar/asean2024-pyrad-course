@@ -367,6 +367,11 @@ conda<span class="w"> </span>activate<span class="w"> </span>asean2024-pyrad-cou
 </pre></div>
 </div>
 </li>
+<li><p>Since pydda installs <a class="reference external" href="https://github.com/ARM-DOE/pyart">arm_pyart</a> we will have to remove it (the workflow work with our <a class="reference external" href="https://github.com/MeteoSwiss/pyart">MeteoSwiss fork</a>)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">uninstall</span> <span class="n">arm_pyart</span>
+</pre></div>
+</div>
+</li>
 <li><p>Finally define some environment variables that are required for some workflows</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>CWD=&quot;$(cd &quot;$(dirname &quot;$1&quot;)&quot;; pwd -P)/$(basename &quot;$1&quot;)&quot;
 export PYART_CONFIG=$CWD/pyrad_config/mf_config.py
