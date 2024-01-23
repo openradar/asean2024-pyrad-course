@@ -3,7 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - python=3.9
-  - numpy<1.25
+  - numpy
   - bottleneck
   - scipy
   - matplotlib
@@ -11,7 +11,7 @@ dependencies:
   - pandas
   - xarray
   - pydda
-  - pyart_mch
+  - pyart_mch==1.8.6
   - xradar
   - pygrib
   - wradlib
@@ -22,7 +22,7 @@ dependencies:
   - rioxarray
   - geopandas
   - datashader
-  - pyrad_mch=1.8.7
+  - pyrad_mch=1.8.8
   - gdal=3.5.2
   - cookiecutter
   # this is needed for notebooks
@@ -32,7 +32,6 @@ dependencies:
   - nbstripout
   - metpy
   - zip
-  - certifi>=2023.07.22
   - cryptography>=41.0.3
   - semver>=3.0.1
   - nbgitpuller

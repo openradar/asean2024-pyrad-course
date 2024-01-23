@@ -62,6 +62,10 @@ If you are interested in running this material locally on your computer, you wil
    conda env create -f environment.yml
    conda activate asean2024-pyrad-course
    ```
+1. Since pydda installs [arm_pyart](https://github.com/ARM-DOE/pyart) we will have to remove it (the workflow work with our [MeteoSwiss fork](https://github.com/MeteoSwiss/pyart))
+   ```
+   conda uninstall arm_pyart
+   ```
 1. Finally define some environment variables that are required for some workflows
    ```
    CWD="$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")"
