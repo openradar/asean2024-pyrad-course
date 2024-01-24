@@ -56,7 +56,7 @@ jobs:
       - name: Install sphinx
         run: pip install sphinx==5.3
       - name: Install pyart
-        run: pip install pyart_mch
+        run: pip install --upgrade --force-reinstall  pyart_mch
       - name: Build the book
         run: |
           # copy baltrad notebooks to book dir
