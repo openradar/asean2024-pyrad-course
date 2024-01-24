@@ -1,0 +1,694 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Description of pyrad config files &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/pyrad/description-config';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="pyrad Tutorial" href="README.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../README.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Jupyter Book</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../README.html">
+                    WMO/ASEAN radar workshop - Pyrad course
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tool Foundations</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../pyart/README.html">Py-ART Tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pyart/pyart-basics.html">Py-ART Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyart/pyart-gridding.html">Py-ART Gridding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyart/pyart-processing.html">Py-ART Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">pyrad Tutorial</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Description of pyrad config files</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/pyrad/description-config.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Description of pyrad config files</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-a-volume-scan-pyrad-config-00-plot-vol">0 : Plot a volume scan (pyrad_config/00_plot_vol)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-cartesian-grid-and-plot-it-pyrad-config-01-grid">1 : Create a Cartesian grid and plot it (pyrad_config/01_grid)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ground-clutter-removal-pyrad-config-02-clutter-filter">2 : Ground-clutter removal (pyrad_config/02_clutter_filter)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-kdp-pyrad-config-03-phidp-kdp">3 : Compute KDP (pyrad_config/03_phidp_kdp)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classifiy-hydrometeors-pyrad-config-04-hydroclass">4 : Classifiy hydrometeors (pyrad_config/04_hydroclass)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#melting-layer-detection-pyrad-config-05-ml">5 : Melting layer detection (pyrad_config/05_ml)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-precipitation-estimation-pyrad-config-06-rr">6 : Quantitative precipitation estimation (pyrad_config/06_rr)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-velocity-azimuth-display-pyrad-config-07-vad">7 : Compute velocity azimuth display (pyrad_config/07_VAD)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-dual-doppler-estimation-pyrad-config-08-dda">8 : Compute dual-Doppler estimation (pyrad_config/08_DDA)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quasi-vertical-profiles-pyrad-config-09-qvp">9 : Quasi-vertical profiles (pyrad_config/09_QVP)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#radar-visibility-from-a-dem-with-the-gecsx-tool-pyrad-config-10-visibility">10 : Radar visibility from a DEM with the GECSX tool (pyrad_config/10_visibility/)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="description-of-pyrad-config-files">
+<h1>Description of pyrad config files<a class="headerlink" href="#description-of-pyrad-config-files" title="Permalink to this heading">#</a></h1>
+<section id="plot-a-volume-scan-pyrad-config-00-plot-vol">
+<h2>0 : Plot a volume scan (pyrad_config/00_plot_vol)<a class="headerlink" href="#plot-a-volume-scan-pyrad-config-00-plot-vol" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>This pyrad configuration file does the following:</p>
+<ul class="simple">
+<li><p>Read polar data from JMA</p></li>
+<li><p>Perform a series of plots from the reflectivity data</p>
+<ul>
+<li><p>PPI plot</p></li>
+<li><p>PseudoRHI plot</p></li>
+<li><p>Bscope plot</p></li>
+<li><p>Histogram plot</p></li>
+<li><p>Plot along specific polar coordinates</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">00</span><span class="n">_plot_vol</span><span class="p">;</span> <span class="n">main_process_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20230801000000</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20230802000000</span> <span class="n">jma_plot_vol</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</section>
+<section id="create-a-cartesian-grid-and-plot-it-pyrad-config-01-grid">
+<h2>1 : Create a Cartesian grid and plot it (pyrad_config/01_grid)<a class="headerlink" href="#create-a-cartesian-grid-and-plot-it-pyrad-config-01-grid" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>This pyrad configuration file does the following:</p>
+<ul class="simple">
+<li><p>Read polar reflectivity and RhoHV data from JMA</p></li>
+<li><p>Convert polar data to a Cartesian grid</p></li>
+<li><p>Perform a series of plots from the Cartesian data</p>
+<ul>
+<li><p>Histogram plot</p></li>
+<li><p>Surfaces at specified heights</p></li>
+<li><p>Latitude slice</p></li>
+<li><p>Longitude slice</p></li>
+<li><p>Cross-section between two points</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">01</span><span class="n">_grid</span><span class="p">;</span> <span class="n">main_process_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20230801000000</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20230802000000</span> <span class="n">jma_grid</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</section>
+<section id="ground-clutter-removal-pyrad-config-02-clutter-filter">
+<h2>2 : Ground-clutter removal (pyrad_config/02_clutter_filter)<a class="headerlink" href="#ground-clutter-removal-pyrad-config-02-clutter-filter" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>This pyrad configuration file does the following:</p>
+<ul class="simple">
+<li><p>Read polar data from MeteoFrance radar (Zh, RhoHV, ZDR, PhiDP)</p></li>
+<li><p>Use this data to detect ground-clutter</p></li>
+<li><p>Remove ground-clutter from the radar data</p></li>
+<li><p>Make PPI plots of filtered Zh, RhoHV, ZDR and PhiDP</p></li>
+</ul>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">02</span><span class="n">_clutter_filter</span><span class="p">;</span> <span class="n">main_process_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20210114101500</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20210114120000</span> <span class="n">mf_pam_mtcy_filter</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</section>
+<section id="compute-kdp-pyrad-config-03-phidp-kdp">
+<h2>3 : Compute KDP (pyrad_config/03_phidp_kdp)<a class="headerlink" href="#compute-kdp-pyrad-config-03-phidp-kdp" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>This pyrad configuration file does the following:</p>
+<ul class="simple">
+<li><p>Read polar data from MeteoFrance radar (Zh, RhoHV, ZDR, PhiDP)</p></li>
+<li><p>Read a GRIB iso0 height file from MeteoFrance</p></li>
+<li><p>Correct ground clutter as in 02_clutter_filter</p></li>
+<li><p>Perform smoothing of raw PhiDP</p></li>
+<li><p>Estimate KDP with different methods:</p>
+<ul>
+<li><p>Vulpiani filtering method</p></li>
+<li><p>Maesaka variational method</p></li>
+<li><p>Linear programming method</p></li>
+<li><p>Kalman filter method</p></li>
+<li><p>Moving least-squares filter</p></li>
+</ul>
+</li>
+<li><p>Perform attenuation correction</p>
+<ul>
+<li><p>ZPHI method</p></li>
+<li><p>Philinear method</p></li>
+</ul>
+</li>
+<li><p>Perform PPI plots of KDP, attenuation corrected Zh, specific attenuation, PIA and PIDA</p></li>
+</ul>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">03</span><span class="n">_phidp_kdp</span><span class="p">;</span> <span class="n">main_process_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20210114101500</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20210114120000</span> <span class="n">mf_pam_mtcy_kdp</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</section>
+<section id="classifiy-hydrometeors-pyrad-config-04-hydroclass">
+<h2>4 : Classifiy hydrometeors (pyrad_config/04_hydroclass)<a class="headerlink" href="#classifiy-hydrometeors-pyrad-config-04-hydroclass" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>This pyrad configuration file does the following:</p>
+<ul class="simple">
+<li><p>Read polar data from MeteoFrance radar (Zh, RhoHV, ZDR, PhiDP)</p></li>
+<li><p>Read a GRIB iso0 height file from MeteoFrance</p></li>
+<li><p>Compute hydrometeor classification</p>
+<ul>
+<li><p>With semi-supervised method (Besic, 2016)</p></li>
+<li><p>By mapping MeteoFrance operational classification</p></li>
+</ul>
+</li>
+<li><p>Plot PPIs of hydrometeor classification</p></li>
+</ul>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">04</span><span class="n">_hydroclass</span><span class="p">;</span> <span class="n">main_process_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20200516200500</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20200516220000</span> <span class="n">mf_odim_coll_hydro</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</section>
+<section id="melting-layer-detection-pyrad-config-05-ml">
+<h2>5 : Melting layer detection (pyrad_config/05_ml)<a class="headerlink" href="#melting-layer-detection-pyrad-config-05-ml" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>This pyrad configuration file does the following:</p>
+<ul class="simple">
+<li><p>Read polar data from MeteoFrance radar (Zh, RhoHV, ZDR, PhiDP)</p></li>
+<li><p>Read a GRIB iso0 height file from MeteoFrance</p></li>
+<li><p>Compute melting layer (ML) extent</p>
+<ul>
+<li><p>With Giangrande method</p></li>
+<li><p>With MeteoFrance method</p></li>
+</ul>
+</li>
+<li><p>Estimate VPR (vertical profile of reflectivity) with MeteoFrance algorithm</p></li>
+<li><p>Correct reflectivity with VPR</p></li>
+<li><p>Create relevant products</p>
+<ul>
+<li><p>Timeseries of ML and VPR</p></li>
+<li><p>PPIs of corrected reflectivity and ML extent overlaid on radar moments</p></li>
+<li><p>Altitude plots of apparent VPR and theoretical VPR</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">05</span><span class="n">_ml</span><span class="p">;</span> <span class="n">main_process_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20200516200500</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20200516220000</span> <span class="n">mf_odim_coll_ml</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</section>
+<section id="quantitative-precipitation-estimation-pyrad-config-06-rr">
+<h2>6 : Quantitative precipitation estimation (pyrad_config/06_rr)<a class="headerlink" href="#quantitative-precipitation-estimation-pyrad-config-06-rr" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>This pyrad configuration file does the following:</p>
+<ul class="simple">
+<li><p>Read polar data from MeteoFrance radar (Zh, RhoHV, ZDR, PhiDP)</p></li>
+<li><p>Read a GRIB iso0 height file from MeteoFrance</p></li>
+<li><p>Compute attenuation with ZPHI method</p></li>
+<li><p>Estimate precipitation with 4 methods</p>
+<ul>
+<li><p>From Zh with R-Z relationship</p></li>
+<li><p>From KDP with R-KDP relationship</p></li>
+<li><p>From Ah (specific attenuation) with R-A relationship</p></li>
+<li><p>From hydrometeor classification using different estimators for every class</p></li>
+</ul>
+</li>
+<li><p>Compute rainfall accumulation over one hour</p></li>
+</ul>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">06</span><span class="n">_rr</span><span class="p">;</span> <span class="n">main_process_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20200516200500</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20200516220000</span> <span class="n">mf_odim_coll_rr</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</section>
+<section id="compute-velocity-azimuth-display-pyrad-config-07-vad">
+<h2>7 : Compute velocity azimuth display (pyrad_config/07_VAD)<a class="headerlink" href="#compute-velocity-azimuth-display-pyrad-config-07-vad" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>This pyrad configuration file does the following:</p>
+<ul class="simple">
+<li><p>Read Doppler data from MeteoFrance radar</p></li>
+<li><p>Compute velocity azimuth display (VAD) from Doppler velocity</p></li>
+<li><p>Plot and save (csv) vertical profiles of wind:</p>
+<ul>
+<li><p>U,V,W wind components</p></li>
+<li><p>Wind speed and direction</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">07</span><span class="n">_VAD</span><span class="p">;</span> <span class="n">main_process_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20210114101500</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20210114120000</span> <span class="n">mf_pag_mtcy_doppler</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</section>
+<section id="compute-dual-doppler-estimation-pyrad-config-08-dda">
+<h2>8 : Compute dual-Doppler estimation (pyrad_config/08_DDA)<a class="headerlink" href="#compute-dual-doppler-estimation-pyrad-config-08-dda" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>This pyrad configuration file does the following:</p>
+<ul class="simple">
+<li><p>Read polar data from MeteoSwiss C-band and X-band radar</p></li>
+<li><p>Perform ground clutter removal for X-band data</p></li>
+<li><p>Load C-band operational dealiased Doppler velocity</p></li>
+<li><p>Perform dual-Doppler estimation using the pyDDA wrapper with sounding data from wmo:06610 for initial conditions</p></li>
+<li><p>Generate plots:</p>
+<ul>
+<li><p>2D wind arrow maps at 1000, 2000 and 3000 m.a.s.l</p></li>
+<li><p>Cross-sections of U,V and W wind components along runway 32 (RW32) of Zurich Airport</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">08</span><span class="n">_DDA</span><span class="p">;</span> <span class="n">main_process_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20231127174000</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20231127175000</span> <span class="n">dda</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</section>
+<section id="quasi-vertical-profiles-pyrad-config-09-qvp">
+<h2>9 : Quasi-vertical profiles (pyrad_config/09_QVP)<a class="headerlink" href="#quasi-vertical-profiles-pyrad-config-09-qvp" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>This pyrad configuration file does the following:</p>
+<ul class="simple">
+<li><p>Perform timeseries of QVP profiles of Zh, ZDR, RHoHV and KDP data from MeteoFrance, using 4 QVP algorithms:</p>
+<ul>
+<li><p>Original QVP algorithm <a class="reference external" href="https://journals.ametsoc.org/view/journals/atot/37/9/jtechD200011.xml#bib60">Ryzhkov et al. (2016)</a></p></li>
+<li><p>Ranged-defined QVP <a class="reference external" href="https://journals.ametsoc.org/view/journals/atot/37/9/jtechD200011.xml#bib76">Tobin and Kumjian (2017)</a></p></li>
+<li><p>Enhanced vertical profile <a class="reference external" href="https://journals.ametsoc.org/view/journals/atot/37/9/jtechD200011.xml#bib10">Bukovčić et al. (2017)</a></p></li>
+<li><p>Slanted vertical profile <a class="reference external" href="https://journals.ametsoc.org/view/journals/atot/37/9/jtechD200011.xml#bib10">Bukovčić et al. (2017)</a></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">09</span><span class="n">_QVP</span><span class="p">;</span> <span class="n">main_process_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20200516200500</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20200516220000</span> <span class="n">mf_odim_coll_qvp</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</section>
+<section id="radar-visibility-from-a-dem-with-the-gecsx-tool-pyrad-config-10-visibility">
+<h2>10 : Radar visibility from a DEM with the GECSX tool (pyrad_config/10_visibility/)<a class="headerlink" href="#radar-visibility-from-a-dem-with-the-gecsx-tool-pyrad-config-10-visibility" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>This pyrad configuration file does the following:</p>
+<ul class="simple">
+<li><p>Read a DEM of the Swiss topography in geotiff format</p></li>
+<li><p>Estimate the static radar visibility and clutter power/reflectivity using either data from an X-band mobile radar (visibility.txt) or using user specified radar parameters and no actual radar data (visibility_norad.txt).</p></li>
+<li><p>Create PPI plots of the clutter and the visibility</p></li>
+<li><p>Create Grid map plots of several other products generated by GECSX (e.g. slope, aspect, min. visible elevation angle,…)</p></li>
+</ul>
+<p><strong>How to run</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">10</span><span class="n">_visibility</span><span class="o">/</span><span class="p">;</span> <span class="n">main_process_gecsx</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="n">visibility_norad</span><span class="o">.</span><span class="n">txt</span> <span class="c1"># no radar data</span>
+<span class="n">cd</span> <span class="n">pyrad_config</span><span class="o">/</span><span class="mi">10</span><span class="n">_visibility</span><span class="o">/</span><span class="p">;</span> <span class="n">main_process_gecsx</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">cfgpath</span> <span class="o">./</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20231127170000</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20231127180000</span> <span class="n">visibility</span><span class="o">.</span><span class="n">txt</span> <span class="c1"># with radar data</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks/pyrad"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="README.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">pyrad Tutorial</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-a-volume-scan-pyrad-config-00-plot-vol">0 : Plot a volume scan (pyrad_config/00_plot_vol)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-cartesian-grid-and-plot-it-pyrad-config-01-grid">1 : Create a Cartesian grid and plot it (pyrad_config/01_grid)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ground-clutter-removal-pyrad-config-02-clutter-filter">2 : Ground-clutter removal (pyrad_config/02_clutter_filter)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-kdp-pyrad-config-03-phidp-kdp">3 : Compute KDP (pyrad_config/03_phidp_kdp)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classifiy-hydrometeors-pyrad-config-04-hydroclass">4 : Classifiy hydrometeors (pyrad_config/04_hydroclass)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#melting-layer-detection-pyrad-config-05-ml">5 : Melting layer detection (pyrad_config/05_ml)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-precipitation-estimation-pyrad-config-06-rr">6 : Quantitative precipitation estimation (pyrad_config/06_rr)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-velocity-azimuth-display-pyrad-config-07-vad">7 : Compute velocity azimuth display (pyrad_config/07_VAD)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-dual-doppler-estimation-pyrad-config-08-dda">8 : Compute dual-Doppler estimation (pyrad_config/08_DDA)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quasi-vertical-profiles-pyrad-config-09-qvp">9 : Quasi-vertical profiles (pyrad_config/09_QVP)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#radar-visibility-from-a-dem-with-the-gecsx-tool-pyrad-config-10-visibility">10 : Radar visibility from a DEM with the GECSX tool (pyrad_config/10_visibility/)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
