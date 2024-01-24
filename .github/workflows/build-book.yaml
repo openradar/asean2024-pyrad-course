@@ -46,7 +46,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/openradar/asean2024-pyrad-course:latest
-      options: --user root
     needs: [build-container]
     defaults:
       run:
@@ -59,7 +58,6 @@ jobs:
         run: pip install --upgrade --force-reinstall  pyart_mch
       - name: Build the book
         run: |
-          # copy baltrad notebooks to book dir
           jupyter-book build ${{ inputs.path_to_notebooks }}
       - name: Zip the book
         run: |
