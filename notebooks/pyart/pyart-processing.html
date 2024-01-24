@@ -347,7 +347,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="kn">import</span> <span class="nn">pyart</span>
-<span class="n">pyart</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">load_config</span><span class="p">(</span><span class="s1">&#39;../../pyrad_config/mch_config.py&#39;</span><span class="p">)</span>
+<span class="n">pyart</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">load_config</span><span class="p">(</span><span class="s1">&#39;../../pyrad_config/mf_config.py&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -361,39 +361,6 @@ const thebe_selector_output = ".output, .cell_output"
 ## If you use this software to prepare a publication, please cite:
 ##
 ##     JJ Helmus and SM Collis, JORS 2016, doi: 10.5334/jors.119
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">import</span> <span class="nn">pyart</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">pyart</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">load_config</span><span class="p">(</span><span class="s1">&#39;../../pyrad_config/mch_config.py&#39;</span><span class="p">)</span>
-
-<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/config.py:81,</span> in <span class="ni">load_config</span><span class="nt">(filename)</span>
-<span class="g g-Whitespace">     </span><span class="mi">79</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">80</span>     <span class="kn">from</span> <span class="nn">importlib.machinery</span> <span class="kn">import</span> <span class="n">SourceFileLoader</span>
-<span class="ne">---&gt; </span><span class="mi">81</span>     <span class="n">cfile</span> <span class="o">=</span> <span class="n">SourceFileLoader</span><span class="p">(</span><span class="s1">&#39;metadata_config&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span><span class="o">.</span><span class="n">load_module</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">82</span> <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">83</span>     <span class="kn">import</span> <span class="nn">imp</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap_external&gt;:529,</span> in <span class="ni">_check_name_wrapper</span><span class="nt">(self, name, *args, **kwargs)</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap_external&gt;:1029,</span> in <span class="ni">load_module</span><span class="nt">(self, fullname)</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap_external&gt;:854,</span> in <span class="ni">load_module</span><span class="nt">(self, fullname)</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap&gt;:271,</span> in <span class="ni">_load_module_shim</span><span class="nt">(self, fullname)</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap&gt;:613,</span> in <span class="ni">_exec</span><span class="nt">(spec, module)</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap_external&gt;:846,</span> in <span class="ni">exec_module</span><span class="nt">(self, module)</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap_external&gt;:982,</span> in <span class="ni">get_code</span><span class="nt">(self, fullname)</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap_external&gt;:1039,</span> in <span class="ni">get_data</span><span class="nt">(self, path)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../../pyrad_config/mch_config.py&#39;
 </pre></div>
 </div>
 </div>
@@ -445,7 +412,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e0b8e8c1fc8baa521dc0b1e8e34119d61e84cc89e10d1ce249c8461e171579d8.png" src="../../_images/e0b8e8c1fc8baa521dc0b1e8e34119d61e84cc89e10d1ce249c8461e171579d8.png" />
+<img alt="../../_images/8ce900c9459b05fd30e838386bf7fbc1ef719d22b78bbbdcf20363b4e5414579.png" src="../../_images/8ce900c9459b05fd30e838386bf7fbc1ef719d22b78bbbdcf20363b4e5414579.png" />
 </div>
 </div>
 <p>Here it is clear that most ground clutter (mostly north west and east of the radar), as well as noise have been filtered out.</p>
@@ -498,7 +465,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/87f029fbbd223e124c929cae7667213b55931017558c39e3752613c9f395705c.png" src="../../_images/87f029fbbd223e124c929cae7667213b55931017558c39e3752613c9f395705c.png" />
+<img alt="../../_images/c34dfdbdb2e6bc587e261515fecd2c67455f44d879bb149504210fc3419ffccb.png" src="../../_images/c34dfdbdb2e6bc587e261515fecd2c67455f44d879bb149504210fc3419ffccb.png" />
 </div>
 </div>
 <p>We can clearly observe a strong specific attenuation within the thunderstorm as well as a significant difference in reflectivity before/after correction behind the thunderstorm to the west.</p>
@@ -524,11 +491,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/store/msrad/utils/anaconda3-wolfensb/envs/rainforest_tests/lib/python3.10/site-packages/numpy/core/fromnumeric.py:784: UserWarning: Warning: &#39;partition&#39; will ignore the &#39;mask&#39; of the MaskedArray.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/numpy/core/fromnumeric.py:771: UserWarning: Warning: &#39;partition&#39; will ignore the &#39;mask&#39; of the MaskedArray.
   a.partition(kth, axis=axis, kind=kind, order=order)
 </pre></div>
 </div>
-<img alt="../../_images/cabaa96f0e2c1e0a4992416c73064684a2a0d829e352dea8eba654e97c5e9d3b.png" src="../../_images/cabaa96f0e2c1e0a4992416c73064684a2a0d829e352dea8eba654e97c5e9d3b.png" />
+<img alt="../../_images/057ccd77a6dffc69dbdf67c0154df10075cd3e6ffdd9c5bd7792dbbeba010ab7.png" src="../../_images/057ccd77a6dffc69dbdf67c0154df10075cd3e6ffdd9c5bd7792dbbeba010ab7.png" />
 </div>
 </div>
 <p>A look at the KDP field shows clusters of very large KDP (&gt; 5 °/km) at the center of the thunderstorm.</p>
@@ -589,7 +556,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1ff91d25498015ec8e33d8975485e5ca6d22b7c84858aab8ba8ea60ecf75d27b.png" src="../../_images/1ff91d25498015ec8e33d8975485e5ca6d22b7c84858aab8ba8ea60ecf75d27b.png" />
+<img alt="../../_images/f5e6e4a66f4f7a5222d892f7f98916911f2067ff13b28dfb5b474131c91a3db0.png" src="../../_images/f5e6e4a66f4f7a5222d892f7f98916911f2067ff13b28dfb5b474131c91a3db0.png" />
 </div>
 </div>
 <p>Note that the plotting commands are slightly more complicated due to the categorical colormap.</p>
@@ -649,6 +616,32 @@ There was indeed intense hail at the ground on that day.</p>
 <span class="n">display</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cartopy</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">RIVERS</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/graph/radarmapdisplay.py:287: UserWarning: No projection was defined for the axes. Overridding defined axes and using default axes with projection Lambert Conformal.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/10m_cultural/ne_10m_admin_1_states_provinces_lines.zip
+  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f37f65cc130&gt;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/10m_cultural/ne_10m_admin_0_countries.zip
+  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/10m_physical/ne_10m_lakes.zip
+  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/10m_physical/ne_10m_rivers_lake_centerlines.zip
+  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
+</pre></div>
+</div>
+<img alt="../../_images/2bbf7f72ddd7288e8a178d1bc56d21a8de90522e43a9332ce23dbc0fea45f5aa.png" src="../../_images/2bbf7f72ddd7288e8a178d1bc56d21a8de90522e43a9332ce23dbc0fea45f5aa.png" />
 </div>
 </div>
 <p>Note that we didn’t estimate precipitation intensity at the ground but only aloft. Within the thunderstorm precipitation intensity is extremely high. This is likely too high because QPE in wet hail is very uncertain. However, even the operational QPE algorithm at MeteoSwiss estimated precipitation intensities at the ground close to 120 mm/h.</p>
