@@ -27,14 +27,48 @@ pyart.config.load_config('../../pyrad_config/mch_config.py')
 
 ------------------
 
+----- stdout -----
+
+## You are using the Python ARM Radar Toolkit (Py-ART), an open source
+## library for working with weather radar data. Py-ART is partly
+## supported by the U.S. Department of Energy as part of the Atmospheric
+## Radiation Measurement (ARM) Climate Research Facility, an Office of
+## Science user facility.
+##
+## If you use this software to prepare a publication, please cite:
+##
+##     JJ Helmus and SM Collis, JORS 2016, doi: 10.5334/jors.119
+------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 8[0m
-[1;32m      5[0m [38;5;28;01mimport[39;00m [38;5;21;01mcartopy[39;00m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Cell [0;32mIn[1], line 9[0m
 [1;32m      6[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
-[0;32m----> 8[0m [38;5;28;01mimport[39;00m [38;5;21;01mpyart[39;00m
-[1;32m      9[0m pyart[38;5;241m.[39mconfig[38;5;241m.[39mload_config([38;5;124m'[39m[38;5;124m../../pyrad_config/mch_config.py[39m[38;5;124m'[39m)
+[1;32m      8[0m [38;5;28;01mimport[39;00m [38;5;21;01mpyart[39;00m
+[0;32m----> 9[0m [43mpyart[49m[38;5;241;43m.[39;49m[43mconfig[49m[38;5;241;43m.[39;49m[43mload_config[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43m../../pyrad_config/mch_config.py[39;49m[38;5;124;43m'[39;49m[43m)[49m
 
-[0;31mModuleNotFoundError[0m: No module named 'pyart'
+File [0;32m/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/config.py:81[0m, in [0;36mload_config[0;34m(filename)[0m
+[1;32m     79[0m [38;5;28;01mtry[39;00m:
+[1;32m     80[0m     [38;5;28;01mfrom[39;00m [38;5;21;01mimportlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mmachinery[39;00m [38;5;28;01mimport[39;00m SourceFileLoader
+[0;32m---> 81[0m     cfile [38;5;241m=[39m [43mSourceFileLoader[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mmetadata_config[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43mfilename[49m[43m)[49m[38;5;241;43m.[39;49m[43mload_module[49m[43m([49m[43m)[49m
+[1;32m     82[0m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m:
+[1;32m     83[0m     [38;5;28;01mimport[39;00m [38;5;21;01mimp[39;00m
+
+File [0;32m<frozen importlib._bootstrap_external>:529[0m, in [0;36m_check_name_wrapper[0;34m(self, name, *args, **kwargs)[0m
+
+File [0;32m<frozen importlib._bootstrap_external>:1029[0m, in [0;36mload_module[0;34m(self, fullname)[0m
+
+File [0;32m<frozen importlib._bootstrap_external>:854[0m, in [0;36mload_module[0;34m(self, fullname)[0m
+
+File [0;32m<frozen importlib._bootstrap>:271[0m, in [0;36m_load_module_shim[0;34m(self, fullname)[0m
+
+File [0;32m<frozen importlib._bootstrap>:613[0m, in [0;36m_exec[0;34m(spec, module)[0m
+
+File [0;32m<frozen importlib._bootstrap_external>:846[0m, in [0;36mexec_module[0;34m(self, module)[0m
+
+File [0;32m<frozen importlib._bootstrap_external>:982[0m, in [0;36mget_code[0;34m(self, fullname)[0m
+
+File [0;32m<frozen importlib._bootstrap_external>:1039[0m, in [0;36mget_data[0;34m(self, path)[0m
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '../../pyrad_config/mch_config.py'
 
