@@ -62,9 +62,10 @@ If you are interested in running this material locally on your computer, you wil
    conda env create -f environment.yml
    conda activate asean2024-pyrad-course
    ```
-1. Since pydda installs [arm_pyart](https://github.com/ARM-DOE/pyart) we will have to remove it (the workflow work with our [MeteoSwiss fork](https://github.com/MeteoSwiss/pyart))
+1. The [pydda](https://github.com/openradar/PyDDA) package installs [arm_pyart](https://github.com/ARM-DOE/pyart), but pyrad works better (more functionalities) with the [MeteoSwiss fork of pyart](https://github.com/MeteoSwiss/pyart), and this version gets installed when pyrad is installed. To solve this conflict, the best solution is to uninstall both pyart versions and reinstall the MeteoSwiss one.
    ```
-   conda uninstall arm_pyart
+   conda uninstall arm_pyart pyart_mch
+   conda install pyart_mch
    ```
 1. Finally define some environment variables that are required for some workflows
    ```
