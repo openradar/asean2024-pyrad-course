@@ -367,8 +367,9 @@ conda<span class="w"> </span>activate<span class="w"> </span>asean2024-pyrad-cou
 </pre></div>
 </div>
 </li>
-<li><p>Since pydda installs <a class="reference external" href="https://github.com/ARM-DOE/pyart">arm_pyart</a> we will have to remove it (the workflow work with our <a class="reference external" href="https://github.com/MeteoSwiss/pyart">MeteoSwiss fork</a>)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">uninstall</span> <span class="n">arm_pyart</span>
+<li><p>The <a class="reference external" href="https://github.com/openradar/PyDDA">pydda</a> package installs <a class="reference external" href="https://github.com/ARM-DOE/pyart">arm_pyart</a>, but pyrad works better (more functionalities) with the <a class="reference external" href="https://github.com/MeteoSwiss/pyart">MeteoSwiss fork of pyart</a>, and this version gets installed when pyrad is installed. To solve this conflict, the best solution is to uninstall both pyart versions and reinstall the MeteoSwiss one.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">uninstall</span> <span class="n">arm_pyart</span> <span class="n">pyart_mch</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="n">pyart_mch</span>
 </pre></div>
 </div>
 </li>
