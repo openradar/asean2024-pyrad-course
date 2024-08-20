@@ -1,36 +1,46 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
     <title>Py-ART Processing &#8212; My Jupyter Book</title>
-    
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-    
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -40,296 +50,315 @@
     <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/pyart/pyart-processing';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="pyrad Tutorial" href="../pyrad/README.html" />
     <link rel="prev" title="Py-ART Gridding" href="pyart-gridding.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">My Jupyter Book</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../README.html">
-   WMO/ASEAN radar workshop - Pyrad course
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Tool Foundations
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="README.html">
-   Py-ART Tutorial
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="pyart-basics.html">
-     Py-ART Basics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pyart-gridding.html">
-     Py-ART Gridding
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Py-ART Processing
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../pyrad/README.html">
-   pyrad Tutorial
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../pyrad/description-config.html">
-     Description of pyrad config files
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
-</div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
 
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/notebooks/pyart/pyart-processing.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
 
-            <!-- Source interaction buttons -->
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
+  
+    
+  
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
+<a class="navbar-brand logo" href="../../README.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Jupyter Book</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
 
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview">
-   Overview
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reading-the-data">
-   Reading the data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ground-clutter-and-noise-removal">
-   Ground-clutter and noise removal
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#attenuation-correction">
-   Attenuation correction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#kdp-estimation">
-   KDP estimation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hydrometeor-classification">
-   Hydrometeor classification
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#qpe">
-   QPE
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#resources-and-references">
-   Resources and References
-  </a>
- </li>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../README.html">
+                    WMO/ASEAN radar workshop - Pyrad course
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tool Foundations</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Py-ART Tutorial</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyart-basics.html">Py-ART Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyart-gridding.html">Py-ART Gridding</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Py-ART Processing</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../pyrad/README.html">pyrad Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pyrad/description-config.html">Description of pyrad config files</a></li>
+</ul>
+</details></li>
 </ul>
 
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/pyart/pyart-processing.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Py-ART Processing</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-data">Reading the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ground-clutter-and-noise-removal">Ground-clutter and noise removal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attenuation-correction">Attenuation correction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kdp-estimation">KDP estimation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hydrometeor-classification">Hydrometeor classification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qpe">QPE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-and-references">Resources and References</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Py-ART Processing</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview">
-   Overview
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reading-the-data">
-   Reading the data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ground-clutter-and-noise-removal">
-   Ground-clutter and noise removal
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#attenuation-correction">
-   Attenuation correction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#kdp-estimation">
-   KDP estimation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hydrometeor-classification">
-   Hydrometeor classification
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#qpe">
-   QPE
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#resources-and-references">
-   Resources and References
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="py-art-processing">
-<h1>Py-ART Processing<a class="headerlink" href="#py-art-processing" title="Permalink to this heading">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="py-art-processing">
+<h1>Py-ART Processing<a class="headerlink" href="#py-art-processing" title="Permalink to this heading">#</a></h1>
 <hr class="docutils" />
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>Within this notebook, we will cover a few Py-ART processing routines:</p>
 <ol class="arabic simple">
 <li><p>Ground clutter detection</p></li>
@@ -352,23 +381,240 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>## You are using the Python ARM Radar Toolkit (Py-ART), an open source
-## library for working with weather radar data. Py-ART is partly
-## supported by the U.S. Department of Energy as part of the Atmospheric
-## Radiation Measurement (ARM) Climate Research Facility, an Office of
-## Science user facility.
-##
-## If you use this software to prepare a publication, please cite:
-##
-##     JJ Helmus and SM Collis, JORS 2016, doi: 10.5334/jors.119
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.0.1 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with &#39;pybind11&gt;=2.12&#39;.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to &#39;numpy&lt;2&#39; or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File &quot;/srv/conda/envs/notebook/lib/python3.9/runpy.py&quot;, line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/runpy.py&quot;, line 87, in _run_code
+    exec(code, run_globals)
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel_launcher.py&quot;, line 18, in &lt;module&gt;
+    app.launch_new_instance()
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/traitlets/config/application.py&quot;, line 1075, in launch_instance
+    app.start()
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/kernelapp.py&quot;, line 739, in start
+    self.io_loop.start()
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/tornado/platform/asyncio.py&quot;, line 205, in start
+    self.asyncio_loop.run_forever()
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/asyncio/base_events.py&quot;, line 601, in run_forever
+    self._run_once()
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/asyncio/base_events.py&quot;, line 1905, in _run_once
+    handle._run()
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/asyncio/events.py&quot;, line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 545, in dispatch_queue
+    await self.process_one()
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 534, in process_one
+    await dispatch(*args)
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 437, in dispatch_shell
+    await result
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/ipkernel.py&quot;, line 362, in execute_request
+    await super().execute_request(stream, ident, parent)
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 778, in execute_request
+    reply_content = await reply_content
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/ipkernel.py&quot;, line 449, in do_execute
+    res = shell.run_cell(
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/zmqshell.py&quot;, line 549, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3048, in run_cell
+    result = self._run_cell(
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3103, in _run_cell
+    result = runner(coro)
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/async_helpers.py&quot;, line 129, in _pseudo_sync_runner
+    coro.send(None)
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3308, in run_cell_async
+    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3490, in run_ast_nodes
+    if await self.run_code(code, result, async_=asy):
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3550, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File &quot;/tmp/ipykernel_348/282707559.py&quot;, line 8, in &lt;module&gt;
+    import pyart
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/__init__.py&quot;, line 11, in &lt;module&gt;
+    from . import (
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/aux_io/__init__.py&quot;, line 70, in &lt;module&gt;
+    from .pattern import read_pattern #noqa
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/aux_io/pattern.py&quot;, line 23, in &lt;module&gt;
+    from ..core.radar import Radar
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/core/__init__.py&quot;, line 40, in &lt;module&gt;
+    from .grid import Grid #noqa
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/core/grid.py&quot;, line 26, in &lt;module&gt;
+    import xarray
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/xarray/__init__.py&quot;, line 3, in &lt;module&gt;
+    from xarray import groupers, testing, tutorial
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/xarray/groupers.py&quot;, line 15, in &lt;module&gt;
+    import pandas as pd
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/pandas/__init__.py&quot;, line 26, in &lt;module&gt;
+    from pandas.compat import (
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/pandas/compat/__init__.py&quot;, line 27, in &lt;module&gt;
+    from pandas.compat.pyarrow import (
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/pandas/compat/pyarrow.py&quot;, line 8, in &lt;module&gt;
+    import pyarrow as pa
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/pyarrow/__init__.py&quot;, line 65, in &lt;module&gt;
+    import pyarrow.lib as _lib
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="ne">AttributeError</span>: _ARRAY_API not found
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.0.1 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with &#39;pybind11&gt;=2.12&#39;.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to &#39;numpy&lt;2&#39; or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File &quot;/srv/conda/envs/notebook/lib/python3.9/runpy.py&quot;, line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/runpy.py&quot;, line 87, in _run_code
+    exec(code, run_globals)
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel_launcher.py&quot;, line 18, in &lt;module&gt;
+    app.launch_new_instance()
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/traitlets/config/application.py&quot;, line 1075, in launch_instance
+    app.start()
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/kernelapp.py&quot;, line 739, in start
+    self.io_loop.start()
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/tornado/platform/asyncio.py&quot;, line 205, in start
+    self.asyncio_loop.run_forever()
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/asyncio/base_events.py&quot;, line 601, in run_forever
+    self._run_once()
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/asyncio/base_events.py&quot;, line 1905, in _run_once
+    handle._run()
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/asyncio/events.py&quot;, line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 545, in dispatch_queue
+    await self.process_one()
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 534, in process_one
+    await dispatch(*args)
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 437, in dispatch_shell
+    await result
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/ipkernel.py&quot;, line 362, in execute_request
+    await super().execute_request(stream, ident, parent)
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 778, in execute_request
+    reply_content = await reply_content
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/ipkernel.py&quot;, line 449, in do_execute
+    res = shell.run_cell(
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/zmqshell.py&quot;, line 549, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3048, in run_cell
+    result = self._run_cell(
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3103, in _run_cell
+    result = runner(coro)
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/async_helpers.py&quot;, line 129, in _pseudo_sync_runner
+    coro.send(None)
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3308, in run_cell_async
+    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3490, in run_ast_nodes
+    if await self.run_code(code, result, async_=asy):
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3550, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File &quot;/tmp/ipykernel_348/282707559.py&quot;, line 8, in &lt;module&gt;
+    import pyart
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/__init__.py&quot;, line 11, in &lt;module&gt;
+    from . import (
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/aux_io/__init__.py&quot;, line 70, in &lt;module&gt;
+    from .pattern import read_pattern #noqa
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/aux_io/pattern.py&quot;, line 23, in &lt;module&gt;
+    from ..core.radar import Radar
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/core/__init__.py&quot;, line 40, in &lt;module&gt;
+    from .grid import Grid #noqa
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/core/grid.py&quot;, line 26, in &lt;module&gt;
+    import xarray
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/xarray/__init__.py&quot;, line 3, in &lt;module&gt;
+    from xarray import groupers, testing, tutorial
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/xarray/groupers.py&quot;, line 15, in &lt;module&gt;
+    import pandas as pd
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/pandas/__init__.py&quot;, line 49, in &lt;module&gt;
+    from pandas.core.api import (
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/pandas/core/api.py&quot;, line 9, in &lt;module&gt;
+    from pandas.core.dtypes.dtypes import (
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/pandas/core/dtypes/dtypes.py&quot;, line 24, in &lt;module&gt;
+    from pandas._libs import (
+  File &quot;/srv/conda/envs/notebook/lib/python3.9/site-packages/pyarrow/__init__.py&quot;, line 65, in &lt;module&gt;
+    import pyarrow.lib as _lib
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="ne">AttributeError</span>: _ARRAY_API not found
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">cartopy</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="kn">import</span> <span class="nn">pyart</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">pyart</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">load_config</span><span class="p">(</span><span class="s1">&#39;../../pyrad_config/mf_config.py&#39;</span><span class="p">)</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">srv</span><span class="o">/</span><span class="n">conda</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">notebook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pyart</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">11</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">environ</span> <span class="k">as</span> <span class="n">_environ</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># import subpackages</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># print out helpful message if build fails or importing from source tree</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">__check_build</span><span class="p">,</span>  <span class="c1"># noqa</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">aux_io</span><span class="p">,</span>  <span class="c1"># noqa</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="n">bridge</span><span class="p">,</span>  <span class="c1"># noqa</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="n">config</span><span class="p">,</span>  <span class="c1"># noqa</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="n">core</span><span class="p">,</span>  <span class="c1"># noqa</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="n">correct</span><span class="p">,</span>  <span class="c1"># noqa</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="n">filters</span><span class="p">,</span>  <span class="c1"># noqa</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>     <span class="n">graph</span><span class="p">,</span>  <span class="c1"># noqa</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="n">io</span><span class="p">,</span>  <span class="c1"># noqa</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>     <span class="nb">map</span><span class="p">,</span>  <span class="c1"># noqa</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>     <span class="n">retrieve</span><span class="p">,</span>  <span class="c1"># noqa</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="n">testing</span><span class="p">,</span>  <span class="c1"># noqa</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">util</span><span class="p">,</span>  <span class="c1"># noqa</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="kn">from</span> <span class="nn">._debug_info</span> <span class="kn">import</span> <span class="n">_debug_info</span>  <span class="c1"># noqa</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="c1"># root level functions</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">srv</span><span class="o">/</span><span class="n">conda</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">notebook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pyart</span><span class="o">/</span><span class="n">aux_io</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">76</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="kn">from</span> <span class="nn">.arm_vpt</span> <span class="kn">import</span> <span class="n">read_kazr</span> <span class="c1">#noqa</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span> <span class="kn">from</span> <span class="nn">.edge_netcdf</span> <span class="kn">import</span> <span class="n">read_edge_netcdf</span> <span class="c1">#noqa</span>
+<span class="ne">---&gt; </span><span class="mi">76</span> <span class="kn">from</span> <span class="nn">.odim_h5</span> <span class="kn">import</span> <span class="n">read_odim_h5</span><span class="p">,</span> <span class="n">read_odim_grid_h5</span><span class="p">,</span> <span class="n">read_odim_vp_h5</span> <span class="c1">#noqa</span>
+<span class="g g-Whitespace">     </span><span class="mi">77</span> <span class="kn">from</span> <span class="nn">.odim_h5_writer</span> <span class="kn">import</span> <span class="n">write_odim_h5</span><span class="p">,</span> <span class="n">write_odim_grid_h5</span> <span class="c1">#noqa</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span> <span class="kn">from</span> <span class="nn">.gamic_hdf5</span> <span class="kn">import</span> <span class="n">read_gamic</span> <span class="c1">#noqa</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">srv</span><span class="o">/</span><span class="n">conda</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">notebook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pyart</span><span class="o">/</span><span class="n">aux_io</span><span class="o">/</span><span class="n">odim_h5</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">24</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">24</span>     <span class="kn">import</span> <span class="nn">h5py</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span>     <span class="n">_H5PY_AVAILABLE</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">srv</span><span class="o">/</span><span class="n">conda</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">notebook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">h5py</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">25</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="c1"># --- Library setup -----------------------------------------------------------</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> 
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="c1"># When importing from the root of the unpacked tarball or git checkout,</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="c1"># Python sees the &quot;h5py&quot; source directory and tries to load it, which fails.</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="c1"># We tried working around this by using &quot;package_dir&quot; but that breaks Cython.</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">25</span>     <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_errors</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>     <span class="kn">import</span> <span class="nn">os.path</span> <span class="k">as</span> <span class="nn">_op</span>
+
+<span class="nn">File h5py/_errors.pyx:1,</span> in <span class="ni">init h5py._errors</span><span class="nt">()</span>
+
+<span class="ne">ValueError</span>: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
 </pre></div>
 </div>
 </div>
 </div>
 <p>Note that you can create your own Py-ART configuration file, which defines default field names, default colormaps, limits, and much more. This is the one we use at MeteoSwiss. You can then either load it at startup in your python code or define the environment variable PYART_CONFIG to point to your file in your work environment.</p>
-</div>
-<div class="section" id="reading-the-data">
-<h2>Reading the data<a class="headerlink" href="#reading-the-data" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="reading-the-data">
+<h2>Reading the data<a class="headerlink" href="#reading-the-data" title="Permalink to this heading">#</a></h2>
 <p>Let’s start by loading our radar file which is of the standard CFRadial type. It corresponds to the third sweep of the operational radar scans, which is a PPI at 1° elevation. It contains raw radar data (before pre-processing) at a resolution of 83 m. We then add the temperature obtained from the COSMO NWP model to our radar object (note that this temperature was previously interpolated from the model grid to the radar polar grid). Note that the freezing level is quite high in this example (around 4200 m.).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -383,9 +629,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="ground-clutter-and-noise-removal">
-<h2>Ground-clutter and noise removal<a class="headerlink" href="#ground-clutter-and-noise-removal" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="ground-clutter-and-noise-removal">
+<h2>Ground-clutter and noise removal<a class="headerlink" href="#ground-clutter-and-noise-removal" title="Permalink to this heading">#</a></h2>
 <p>Py-ART uses gatefilters which are a kind of mask to filter out problematic measurements. Most processing routines can take a gatefilter as input and will ignore pixels that were filtered out.</p>
 <p>Here we create a gate <strong><a class="reference external" href="https://arm-doe.github.io/pyart/API/generated/pyart.filters.moment_and_texture_based_gate_filter.html">filter</a></strong> based on the radar moments and their texture to filter out noise and ground clutter. Since we are interested in a strong thunderstorm we also extend this filter to remove all measurements with a SNR ratio of less than 10 dB.</p>
 <div class="cell docutils container">
@@ -412,13 +658,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/8ce900c9459b05fd30e838386bf7fbc1ef719d22b78bbbdcf20363b4e5414579.png" src="../../_images/8ce900c9459b05fd30e838386bf7fbc1ef719d22b78bbbdcf20363b4e5414579.png" />
+<img alt="../../_images/e0b8e8c1fc8baa521dc0b1e8e34119d61e84cc89e10d1ce249c8461e171579d8.png" src="../../_images/e0b8e8c1fc8baa521dc0b1e8e34119d61e84cc89e10d1ce249c8461e171579d8.png" />
 </div>
 </div>
 <p>Here it is clear that most ground clutter (mostly north west and east of the radar), as well as noise have been filtered out.</p>
-</div>
-<div class="section" id="attenuation-correction">
-<h2>Attenuation correction<a class="headerlink" href="#attenuation-correction" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="attenuation-correction">
+<h2>Attenuation correction<a class="headerlink" href="#attenuation-correction" title="Permalink to this heading">#</a></h2>
 <p>We can expect strong attenuation behind a thunderstorm like this. So it is a good idea to try to correct for it. Knowledge of the specific attenuation can also be very insightful.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -465,13 +711,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c34dfdbdb2e6bc587e261515fecd2c67455f44d879bb149504210fc3419ffccb.png" src="../../_images/c34dfdbdb2e6bc587e261515fecd2c67455f44d879bb149504210fc3419ffccb.png" />
+<img alt="../../_images/87f029fbbd223e124c929cae7667213b55931017558c39e3752613c9f395705c.png" src="../../_images/87f029fbbd223e124c929cae7667213b55931017558c39e3752613c9f395705c.png" />
 </div>
 </div>
 <p>We can clearly observe a strong specific attenuation within the thunderstorm as well as a significant difference in reflectivity before/after correction behind the thunderstorm to the west.</p>
-</div>
-<div class="section" id="kdp-estimation">
-<h2>KDP estimation<a class="headerlink" href="#kdp-estimation" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="kdp-estimation">
+<h2>KDP estimation<a class="headerlink" href="#kdp-estimation" title="Permalink to this heading">#</a></h2>
 <p>Another very interesting radar variable is the specific differential phase shift KDP. Large KDP indicates the presence of large oblate drops and is linked to very strong precipitation. KDP is also needed for the hydrometeor classification algorithm. However KDP is not measured directly and needs to be estimated numerically from the raw differential phase shift (PHIDP). Py-ART provides three different retrieval methods. We will use the method by <strong><a class="reference external" href="https://arm-doe.github.io/pyart/API/generated/pyart.retrieve.kdp_maesaka.html">Maesaka et al. (2012)</a></strong> which is fast and robust but assumes KDP to be positive and is therefore limited to rainfall below the melting layer and/or warm clouds.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -491,17 +737,17 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/numpy/core/fromnumeric.py:771: UserWarning: Warning: &#39;partition&#39; will ignore the &#39;mask&#39; of the MaskedArray.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/store/msrad/utils/anaconda3-wolfensb/envs/rainforest_tests/lib/python3.10/site-packages/numpy/core/fromnumeric.py:784: UserWarning: Warning: &#39;partition&#39; will ignore the &#39;mask&#39; of the MaskedArray.
   a.partition(kth, axis=axis, kind=kind, order=order)
 </pre></div>
 </div>
-<img alt="../../_images/057ccd77a6dffc69dbdf67c0154df10075cd3e6ffdd9c5bd7792dbbeba010ab7.png" src="../../_images/057ccd77a6dffc69dbdf67c0154df10075cd3e6ffdd9c5bd7792dbbeba010ab7.png" />
+<img alt="../../_images/cabaa96f0e2c1e0a4992416c73064684a2a0d829e352dea8eba654e97c5e9d3b.png" src="../../_images/cabaa96f0e2c1e0a4992416c73064684a2a0d829e352dea8eba654e97c5e9d3b.png" />
 </div>
 </div>
 <p>A look at the KDP field shows clusters of very large KDP (&gt; 5 °/km) at the center of the thunderstorm.</p>
-</div>
-<div class="section" id="hydrometeor-classification">
-<h2>Hydrometeor classification<a class="headerlink" href="#hydrometeor-classification" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="hydrometeor-classification">
+<h2>Hydrometeor classification<a class="headerlink" href="#hydrometeor-classification" title="Permalink to this heading">#</a></h2>
 <p>The hydrometeor classification algorithm in Py-ART by <strong><a class="reference external" href="https://arm-doe.github.io/pyart/API/generated/pyart.retrieve.kdp_maesaka.html">Besic et al. (2016)</a></strong> uses ZH, ZDR, RHOHV, KDP and the temperature to classify hydrometeors into one of 8 classes:</p>
 <ul class="simple">
 <li><p>Ice hail, high density Graupel</p></li>
@@ -556,15 +802,15 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/8591c8d99814a73cd41dae858e32147c987a9789845ae8e5f696c4bbd17d88ee.png" src="../../_images/8591c8d99814a73cd41dae858e32147c987a9789845ae8e5f696c4bbd17d88ee.png" />
+<img alt="../../_images/ba6a1ca186b4ec4cd265b2b1811b6ff76edf0c7e85f2d2f524ffda59ded7c4b3.png" src="../../_images/ba6a1ca186b4ec4cd265b2b1811b6ff76edf0c7e85f2d2f524ffda59ded7c4b3.png" />
 </div>
 </div>
 <p>Note that the plotting commands are slightly more complicated due to the categorical colormap.</p>
 <p>A look at the hydrometeor classification reveals the presence of wet hail in the center of the thunderstorm surrounded by rain and by light rain. A few isolated pixels (unfiltered ground clutter) are also classified as hail.
 There was indeed intense hail at the ground on that day.</p>
-</div>
-<div class="section" id="qpe">
-<h2>QPE<a class="headerlink" href="#qpe" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="qpe">
+<h2>QPE<a class="headerlink" href="#qpe" title="Permalink to this heading">#</a></h2>
 <p>Py-ART provides several QPE algorithms but the most refined relies on the hydrometeor classification and uses different relations between radar variables and precipitation intensities within the different hydrometeor classes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -618,44 +864,28 @@ There was indeed intense hail at the ground on that day.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/graph/radarmapdisplay.py:287: UserWarning: No projection was defined for the axes. Overridding defined axes and using default axes with projection Lambert Conformal.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/users/wolfensb/pyrad/src/pyart/pyart/graph/radarmapdisplay.py:287: UserWarning: No projection was defined for the axes. Overridding defined axes and using default axes with projection Lambert Conformal.
   warnings.warn(
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/10m_cultural/ne_10m_admin_1_states_provinces_lines.zip
-  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x2af9b0230280&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f3511deb3d0&gt;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/10m_cultural/ne_10m_admin_0_countries.zip
-  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/10m_physical/ne_10m_lakes.zip
-  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/10m_physical/ne_10m_rivers_lake_centerlines.zip
-  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
-</pre></div>
-</div>
-<img alt="../../_images/2bbf7f72ddd7288e8a178d1bc56d21a8de90522e43a9332ce23dbc0fea45f5aa.png" src="../../_images/2bbf7f72ddd7288e8a178d1bc56d21a8de90522e43a9332ce23dbc0fea45f5aa.png" />
+<img alt="../../_images/16f48f880175a94c6819c285c10dde946a90470a2f4abd802c00ba3b61ed1268.png" src="../../_images/16f48f880175a94c6819c285c10dde946a90470a2f4abd802c00ba3b61ed1268.png" />
 </div>
 </div>
 <p>Note that we didn’t estimate precipitation intensity at the ground but only aloft. Within the thunderstorm precipitation intensity is extremely high. This is likely too high because QPE in wet hail is very uncertain. However, even the operational QPE algorithm at MeteoSwiss estimated precipitation intensities at the ground close to 120 mm/h.</p>
-</div>
-<div class="section" id="resources-and-references">
-<h2>Resources and References<a class="headerlink" href="#resources-and-references" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="resources-and-references">
+<h2>Resources and References<a class="headerlink" href="#resources-and-references" title="Permalink to this heading">#</a></h2>
 <p>MeteoSwiss Py-ART essentials links:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/MeteoSwiss/pyart">Github</a></p></li>
 <li><p><a class="reference external" href="https://meteoswiss.github.io/pyart/index.html">Docs</a></p></li>
 <li><p><a class="reference external" href="https://github.com/MeteoSwiss/pyart/issues">Issue Tracker</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -677,44 +907,110 @@ There was indeed intense hail at the ground on that day.</p>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="pyart-gridding.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Py-ART Gridding</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="pyart-gridding.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Py-ART Gridding</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../pyrad/README.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../pyrad/README.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">pyrad Tutorial</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
+                </footer>
+              
+            </div>
             
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By The Jupyter Book community<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-      </div>
-    </div>
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-data">Reading the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ground-clutter-and-noise-removal">Ground-clutter and noise removal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attenuation-correction">Attenuation correction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kdp-estimation">KDP estimation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hydrometeor-classification">Hydrometeor classification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qpe">QPE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-and-references">Resources and References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

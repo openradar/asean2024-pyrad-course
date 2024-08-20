@@ -1,17 +1,17 @@
 Traceback (most recent call last):
   File "/srv/conda/envs/notebook/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/nbclient/client.py", line 1305, in execute
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/nbclient/client.py", line 1314, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
   File "/srv/conda/envs/notebook/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
     return future.result()
-  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/nbclient/client.py", line 705, in async_execute
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/nbclient/client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/nbclient/client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -28,9 +28,168 @@ from pyart.testing import get_test_data
 warnings.filterwarnings('ignore')
 ------------------
 
+----- stderr -----
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.0.1 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/srv/conda/envs/notebook/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/srv/conda/envs/notebook/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel_launcher.py", line 18, in <module>
+    app.launch_new_instance()
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/traitlets/config/application.py", line 1075, in launch_instance
+    app.start()
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/kernelapp.py", line 739, in start
+    self.io_loop.start()
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/tornado/platform/asyncio.py", line 205, in start
+    self.asyncio_loop.run_forever()
+  File "/srv/conda/envs/notebook/lib/python3.9/asyncio/base_events.py", line 601, in run_forever
+    self._run_once()
+  File "/srv/conda/envs/notebook/lib/python3.9/asyncio/base_events.py", line 1905, in _run_once
+    handle._run()
+  File "/srv/conda/envs/notebook/lib/python3.9/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 545, in dispatch_queue
+    await self.process_one()
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 534, in process_one
+    await dispatch(*args)
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 437, in dispatch_shell
+    await result
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 362, in execute_request
+    await super().execute_request(stream, ident, parent)
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 778, in execute_request
+    reply_content = await reply_content
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 449, in do_execute
+    res = shell.run_cell(
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/zmqshell.py", line 549, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/interactiveshell.py", line 3048, in run_cell
+    result = self._run_cell(
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/interactiveshell.py", line 3103, in _run_cell
+    result = runner(coro)
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/async_helpers.py", line 129, in _pseudo_sync_runner
+    coro.send(None)
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/interactiveshell.py", line 3308, in run_cell_async
+    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/interactiveshell.py", line 3490, in run_ast_nodes
+    if await self.run_code(code, result, async_=asy):
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/interactiveshell.py", line 3550, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "/tmp/ipykernel_320/2480179226.py", line 8, in <module>
+    import pyart
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/__init__.py", line 11, in <module>
+    from . import (
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/aux_io/__init__.py", line 70, in <module>
+    from .pattern import read_pattern #noqa
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/aux_io/pattern.py", line 23, in <module>
+    from ..core.radar import Radar
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/core/__init__.py", line 40, in <module>
+    from .grid import Grid #noqa
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/core/grid.py", line 26, in <module>
+    import xarray
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/xarray/__init__.py", line 3, in <module>
+    from xarray import groupers, testing, tutorial
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/xarray/groupers.py", line 15, in <module>
+    import pandas as pd
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/pandas/__init__.py", line 26, in <module>
+    from pandas.compat import (
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/pandas/compat/__init__.py", line 27, in <module>
+    from pandas.compat.pyarrow import (
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/pandas/compat/pyarrow.py", line 8, in <module>
+    import pyarrow as pa
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/pyarrow/__init__.py", line 65, in <module>
+    import pyarrow.lib as _lib
+----- stderr -----
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.0.1 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/srv/conda/envs/notebook/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/srv/conda/envs/notebook/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel_launcher.py", line 18, in <module>
+    app.launch_new_instance()
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/traitlets/config/application.py", line 1075, in launch_instance
+    app.start()
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/kernelapp.py", line 739, in start
+    self.io_loop.start()
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/tornado/platform/asyncio.py", line 205, in start
+    self.asyncio_loop.run_forever()
+  File "/srv/conda/envs/notebook/lib/python3.9/asyncio/base_events.py", line 601, in run_forever
+    self._run_once()
+  File "/srv/conda/envs/notebook/lib/python3.9/asyncio/base_events.py", line 1905, in _run_once
+    handle._run()
+  File "/srv/conda/envs/notebook/lib/python3.9/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 545, in dispatch_queue
+    await self.process_one()
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 534, in process_one
+    await dispatch(*args)
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 437, in dispatch_shell
+    await result
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 362, in execute_request
+    await super().execute_request(stream, ident, parent)
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/kernelbase.py", line 778, in execute_request
+    reply_content = await reply_content
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/ipkernel.py", line 449, in do_execute
+    res = shell.run_cell(
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/ipykernel/zmqshell.py", line 549, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/interactiveshell.py", line 3048, in run_cell
+    result = self._run_cell(
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/interactiveshell.py", line 3103, in _run_cell
+    result = runner(coro)
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/async_helpers.py", line 129, in _pseudo_sync_runner
+    coro.send(None)
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/interactiveshell.py", line 3308, in run_cell_async
+    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/interactiveshell.py", line 3490, in run_ast_nodes
+    if await self.run_code(code, result, async_=asy):
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/interactiveshell.py", line 3550, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "/tmp/ipykernel_320/2480179226.py", line 8, in <module>
+    import pyart
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/__init__.py", line 11, in <module>
+    from . import (
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/aux_io/__init__.py", line 70, in <module>
+    from .pattern import read_pattern #noqa
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/aux_io/pattern.py", line 23, in <module>
+    from ..core.radar import Radar
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/core/__init__.py", line 40, in <module>
+    from .grid import Grid #noqa
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/core/grid.py", line 26, in <module>
+    import xarray
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/xarray/__init__.py", line 3, in <module>
+    from xarray import groupers, testing, tutorial
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/xarray/groupers.py", line 15, in <module>
+    import pandas as pd
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/pandas/__init__.py", line 49, in <module>
+    from pandas.core.api import (
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/pandas/core/api.py", line 9, in <module>
+    from pandas.core.dtypes.dtypes import (
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/pandas/core/dtypes/dtypes.py", line 24, in <module>
+    from pandas._libs import (
+  File "/srv/conda/envs/notebook/lib/python3.9/site-packages/pyarrow/__init__.py", line 65, in <module>
+    import pyarrow.lib as _lib
+------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+[0;31mValueError[0m                                Traceback (most recent call last)
 Cell [0;32mIn[1], line 8[0m
 [1;32m      4[0m [38;5;28;01mimport[39;00m [38;5;21;01mcartopy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcrs[39;00m [38;5;28;01mas[39;00m [38;5;21;01mccrs[39;00m
 [1;32m      5[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
@@ -38,5 +197,54 @@ Cell [0;32mIn[1], line 8[0m
 [1;32m      9[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpyart[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtesting[39;00m [38;5;28;01mimport[39;00m get_test_data
 [1;32m     11[0m warnings[38;5;241m.[39mfilterwarnings([38;5;124m'[39m[38;5;124mignore[39m[38;5;124m'[39m)
 
-[0;31mModuleNotFoundError[0m: No module named 'pyart'
+File [0;32m/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/__init__.py:11[0m
+[1;32m      7[0m [38;5;28;01mfrom[39;00m [38;5;21;01mos[39;00m [38;5;28;01mimport[39;00m environ [38;5;28;01mas[39;00m _environ
+[1;32m      9[0m [38;5;66;03m# import subpackages[39;00m
+[1;32m     10[0m [38;5;66;03m# print out helpful message if build fails or importing from source tree[39;00m
+[0;32m---> 11[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m [38;5;28;01mimport[39;00m (
+[1;32m     12[0m     __check_build,  [38;5;66;03m# noqa[39;00m
+[1;32m     13[0m     aux_io,  [38;5;66;03m# noqa[39;00m
+[1;32m     14[0m     bridge,  [38;5;66;03m# noqa[39;00m
+[1;32m     15[0m     config,  [38;5;66;03m# noqa[39;00m
+[1;32m     16[0m     core,  [38;5;66;03m# noqa[39;00m
+[1;32m     17[0m     correct,  [38;5;66;03m# noqa[39;00m
+[1;32m     18[0m     filters,  [38;5;66;03m# noqa[39;00m
+[1;32m     19[0m     graph,  [38;5;66;03m# noqa[39;00m
+[1;32m     20[0m     io,  [38;5;66;03m# noqa[39;00m
+[1;32m     21[0m     [38;5;28mmap[39m,  [38;5;66;03m# noqa[39;00m
+[1;32m     22[0m     retrieve,  [38;5;66;03m# noqa[39;00m
+[1;32m     23[0m     testing,  [38;5;66;03m# noqa[39;00m
+[1;32m     24[0m     util,  [38;5;66;03m# noqa[39;00m
+[1;32m     25[0m )
+[1;32m     26[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01m_debug_info[39;00m [38;5;28;01mimport[39;00m _debug_info  [38;5;66;03m# noqa[39;00m
+[1;32m     28[0m [38;5;66;03m# root level functions[39;00m
+
+File [0;32m/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/aux_io/__init__.py:76[0m
+[1;32m     74[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01marm_vpt[39;00m [38;5;28;01mimport[39;00m read_kazr [38;5;66;03m#noqa[39;00m
+[1;32m     75[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01medge_netcdf[39;00m [38;5;28;01mimport[39;00m read_edge_netcdf [38;5;66;03m#noqa[39;00m
+[0;32m---> 76[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01modim_h5[39;00m [38;5;28;01mimport[39;00m read_odim_h5, read_odim_grid_h5, read_odim_vp_h5 [38;5;66;03m#noqa[39;00m
+[1;32m     77[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01modim_h5_writer[39;00m [38;5;28;01mimport[39;00m write_odim_h5, write_odim_grid_h5 [38;5;66;03m#noqa[39;00m
+[1;32m     78[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mgamic_hdf5[39;00m [38;5;28;01mimport[39;00m read_gamic [38;5;66;03m#noqa[39;00m
+
+File [0;32m/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/aux_io/odim_h5.py:24[0m
+[1;32m     21[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[1;32m     23[0m [38;5;28;01mtry[39;00m:
+[0;32m---> 24[0m     [38;5;28;01mimport[39;00m [38;5;21;01mh5py[39;00m
+[1;32m     25[0m     _H5PY_AVAILABLE [38;5;241m=[39m [38;5;28;01mTrue[39;00m
+[1;32m     26[0m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m:
+
+File [0;32m/srv/conda/envs/notebook/lib/python3.9/site-packages/h5py/__init__.py:25[0m
+[1;32m     19[0m [38;5;66;03m# --- Library setup -----------------------------------------------------------[39;00m
+[1;32m     20[0m 
+[1;32m     21[0m [38;5;66;03m# When importing from the root of the unpacked tarball or git checkout,[39;00m
+[1;32m     22[0m [38;5;66;03m# Python sees the "h5py" source directory and tries to load it, which fails.[39;00m
+[1;32m     23[0m [38;5;66;03m# We tried working around this by using "package_dir" but that breaks Cython.[39;00m
+[1;32m     24[0m [38;5;28;01mtry[39;00m:
+[0;32m---> 25[0m     [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m [38;5;28;01mimport[39;00m _errors
+[1;32m     26[0m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m:
+[1;32m     27[0m     [38;5;28;01mimport[39;00m [38;5;21;01mos[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpath[39;00m [38;5;28;01mas[39;00m [38;5;21;01m_op[39;00m
+
+File [0;32mh5py/_errors.pyx:1[0m, in [0;36minit h5py._errors[0;34m()[0m
+
+[0;31mValueError[0m: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
 
