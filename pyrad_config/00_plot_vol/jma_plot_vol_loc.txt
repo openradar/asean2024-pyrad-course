@@ -40,7 +40,16 @@ ScanList STRARR 14
 ScanPeriod INT 5
 
 # identifier of each data type in file name
-DataTypeID STRUCT 7
+DataTypeIDInFiles STRUCT 7
+    dBZ STRING DBZH
+    ZDR STRING ZDR
+    RhoHV STRING RHOHV
+    uPhiDP STRING PHIDP
+    KDP STRING KDP
+    V STRING VEL
+    W STRING WIDTH
+
+DataTypeIDInFilenames STRUCT 7
     dBZ STRING ref
     ZDR STRING zdr
     RhoHV STRING rhv
@@ -48,7 +57,6 @@ DataTypeID STRUCT 7
 	KDP STRING kdp
 	V STRING vel
 	W STRING vsw
-
 
 # Image config
 ppiImageConfig STRUCT 6

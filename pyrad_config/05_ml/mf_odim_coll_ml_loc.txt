@@ -32,6 +32,17 @@ CosmoForecasted INT 24
 radar_beam_width_h FLOAT 1.25
 frequency FLOAT 2.81e9
 
+path_convention STRING ODIM
+
+DataTypeIDInFiles STRUCT 7
+    dBuZ STRING TH
+    ZDR STRING ZDR
+    RhoHV STRING RHOHV
+    uPhiDP STRING PHIDP
+    KDP STRING KDP
+    V STRING VEL
+    W STRING WIDTH
+
 
 # Image config
 ppiImageConfig STRUCT 7

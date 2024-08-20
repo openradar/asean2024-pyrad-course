@@ -23,7 +23,7 @@ dataSetList STRARR 9
 # GRIB format as reference value
 H_ISO0_GRIB STRUCT 3
     type STRING ISO0_GRIB
-    datatype STRING MFCFRADIAL:uPhiDP,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+    datatype STRING CFRADIAL:uPhiDP,D{%Y-%m-%d}-F{%Y%m%d%H%M}
     MAKE_GLOBAL INT 1
     products STRUCT 1
         PPI_EL00_A STRUCT 5
@@ -40,20 +40,20 @@ H_ISO0_GRIB STRUCT 3
 echoID STRUCT 3
     type STRING SAN
     datatype STRARR 4
-        MFCFRADIAL:dBuZ,D{%Y-%m-%d}-F{%Y%m%d%H%M}
-        MFCFRADIAL:RhoHV,D{%Y-%m-%d}-F{%Y%m%d%H%M}
-        MFCFRADIAL:ZDR,D{%Y-%m-%d}-F{%Y%m%d%H%M}
-        MFCFRADIAL:uPhiDP,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+        CFRADIAL:dBuZ,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+        CFRADIAL:RhoHV,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+        CFRADIAL:ZDR,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+        CFRADIAL:uPhiDP,D{%Y-%m-%d}-F{%Y%m%d%H%M}
     MAKE_GLOBAL INT 1
 
 echoFilter STRUCT 3
     type STRING ECHO_FILTER
     datatype STRARR 5
-        MFCFRADIAL:echoID,D{%Y-%m-%d}-F{%Y%m%d%H%M}
-        MFCFRADIAL:dBuZ,D{%Y-%m-%d}-F{%Y%m%d%H%M}
-        MFCFRADIAL:uPhiDP,D{%Y-%m-%d}-F{%Y%m%d%H%M}
-        MFCFRADIAL:RhoHV,D{%Y-%m-%d}-F{%Y%m%d%H%M}
-        MFCFRADIAL:ZDR,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+        CFRADIAL:echoID,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+        CFRADIAL:dBuZ,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+        CFRADIAL:uPhiDP,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+        CFRADIAL:RhoHV,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+        CFRADIAL:ZDR,D{%Y-%m-%d}-F{%Y%m%d%H%M}
     MAKE_GLOBAL INT 1
 
 

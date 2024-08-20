@@ -14,7 +14,7 @@ dataSetList STRARR 1
 VAD STRUCT 3
     type STRING VAD
     datatype STRARR 1
-        MFCFRADIAL:V,D{%Y-%m-%d}-F{%Y%m%d%H%M}
+        CFRADIAL:V,D{%Y-%m-%d}-F{%Y%m%d%H%M}
     products STRUCT 1
         profile STRUCT 6
             type STRING WIND_PROFILE

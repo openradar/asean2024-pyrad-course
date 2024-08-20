@@ -18,8 +18,8 @@ dataSetList STRARR 4
 grid STRUCT 12
     type STRING VOL2GRID
     datatype STRARR 2
-        MFCFRADIAL:dBZ,D{}-F{%Y%m%d%H%M%S}
-        MFCFRADIAL:RhoHV,D{}-F{%Y%m%d%H%M%S}
+        CFRADIAL:dBZ,D{}-F{%Y%m%d%H%M%S}
+        CFRADIAL:RhoHV,D{}-F{%Y%m%d%H%M%S}
     xmin FLOAT -30000
     xmax FLOAT  80000
     ymin FLOAT -30000

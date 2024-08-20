@@ -19,6 +19,18 @@ ScanList STRARR 1
 # Radar frequency
 frequency FLOAT 5.6E9
 
+path_convention STRING ODIM
+
+DataTypeIDInFiles STRUCT 7
+    dBuZ STRING TH
+    ZDR STRING ZDR
+    RhoHV STRING RHOHV
+    uPhiDP STRING PHIDP
+    KDP STRING KDP
+    V STRING VEL
+    W STRING WIDTH
+
+
 # scan strategy      
 # cycle 1: 90/5  /2.2/1.2/0.7/0.4
 # cycle 2:  7/3.9/2.2/1.2/0.7/0.4

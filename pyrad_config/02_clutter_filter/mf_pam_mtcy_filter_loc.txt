@@ -23,6 +23,17 @@ ScanList STRARR 1
 # Repetition time of the scans [min]
 ScanPeriod INT 15
 
+path_convention STRING ODIM
+
+DataTypeIDInFiles STRUCT 7
+    dBuZ STRING TH
+    ZDR STRING ZDR
+    RhoHV STRING RHOHV
+    uPhiDP STRING PHIDP
+    KDP STRING KDP
+    V STRING VEL
+    W STRING WIDTH
+
 
 # Image config
 ppiImageConfig STRUCT 6

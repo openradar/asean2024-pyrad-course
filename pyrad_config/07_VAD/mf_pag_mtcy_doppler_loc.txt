@@ -24,6 +24,12 @@ ScanList STRARR 1
 # Repetition time of the scans [min]
 ScanPeriod INT 15
 
+path_convention STRING ODIM
+
+DataTypeIDInFiles STRUCT 1
+    V STRING VRAD
+
+
 # Image config
 ppiImageConfig STRUCT 6
    xsize      FLOAT  10.      # image size [inches] (default dots per inch (dpi):72)

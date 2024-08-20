@@ -4,9 +4,9 @@
 
 # List of datasets to generate.
 # The detailed specification of each dataset is given below.
-dataSetList STRARR 1
+dataSetList STRARR 2
 	dBZ
-
+        RhoHV
 #    dBZ
 #	ZDR
 #	RhoHV
@@ -22,7 +22,7 @@ dataSetList STRARR 1
 # ============================================================================
 dBZ STRUCT 3
     type STRING RAW
-    datatype STRING MFCFRADIAL:dBZ,D{}-F{%Y%m%d%H%M%S}
+    datatype STRING CFRADIAL:dBZ,D{}-F{%Y%m%d%H%M%S}
     products STRUCT 8
         PPI_EL00 STRUCT 3
             type STRING PPI_IMAGE
@@ -63,7 +63,7 @@ dBZ STRUCT 3
 
 ZDR STRUCT 3
     type STRING RAW
-    datatype STRING MFCFRADIAL:ZDR,D{}-F{%Y%m%d%H%M%S}
+    datatype STRING CFRADIAL:ZDR,D{}-F{%Y%m%d%H%M%S}
     products STRUCT 5
         PPI_EL00 STRUCT 5
             type STRING PPI_IMAGE
@@ -96,7 +96,7 @@ ZDR STRUCT 3
 
 RhoHV STRUCT 3
     type STRING RAW
-    datatype STRING MFCFRADIAL:RhoHV,D{}-F{%Y%m%d%H%M%S}
+    datatype STRING CFRADIAL:RhoHV,D{}-F{%Y%m%d%H%M%S}
     products STRUCT 5
         PPI_EL00 STRUCT 5
             type STRING PPI_IMAGE
@@ -128,7 +128,7 @@ RhoHV STRUCT 3
 
 PhiDP STRUCT 3
     type STRING RAW
-    datatype STRING MFCFRADIAL:PhiDP,D{}-F{%Y%m%d%H%M%S}
+    datatype STRING CFRADIAL:PhiDP,D{}-F{%Y%m%d%H%M%S}
     products STRUCT 5
         PPI_EL00 STRUCT 3
             type STRING PPI_IMAGE
@@ -153,7 +153,7 @@ PhiDP STRUCT 3
 
 KDP STRUCT 3
     type STRING RAW
-    datatype STRING MFCFRADIAL:KDP,D{}-F{%Y%m%d%H%M%S}
+    datatype STRING CFRADIAL:KDP,D{}-F{%Y%m%d%H%M%S}
     products STRUCT 5
         PPI_EL00 STRUCT 3
             type STRING PPI_IMAGE
@@ -178,7 +178,7 @@ KDP STRUCT 3
 
 V STRUCT 3
     type STRING RAW
-    datatype STRING MFCFRADIAL:V,D{}-F{%Y%m%d%H%M%S}
+    datatype STRING CFRADIAL:V,D{}-F{%Y%m%d%H%M%S}
     products STRUCT 5
         PPI_EL00 STRUCT 5
             type STRING PPI_IMAGE
@@ -209,7 +209,7 @@ V STRUCT 3
 
 W STRUCT 3
     type STRING RAW
-    datatype STRING MFCFRADIAL:W,D{}-F{%Y%m%d%H%M%S}
+    datatype STRING CFRADIAL:W,D{}-F{%Y%m%d%H%M%S}
     products STRUCT 5
         PPI_EL00 STRUCT 5
             type STRING PPI_IMAGE
@@ -247,8 +247,8 @@ W STRUCT 3
 dBZ_ZDR STRUCT 3
     type STRING RAW
     datatype STRARR 2
-        MFCFRADIAL:dBZ,D{}-F{%Y%m%d%H%M%S}
-        MFCFRADIAL:ZDR,D{}-F{%Y%m%d%H%M%S}
+        CFRADIAL:dBZ,D{}-F{%Y%m%d%H%M%S}
+        CFRADIAL:ZDR,D{}-F{%Y%m%d%H%M%S}
 	products STRUCT 2
         PPI_EL00 STRUCT 5
             type STRING PPI_CONTOUR_OVERPLOT
@@ -269,8 +269,8 @@ dBZ_ZDR STRUCT 3
 dBZ_RhoHV STRUCT 3
     type STRING RAW
     datatype STRARR 2
-        MFCFRADIAL:dBZ,D{}-F{%Y%m%d%H%M%S}
-        MFCFRADIAL:RhoHV,D{}-F{%Y%m%d%H%M%S}
+        CFRADIAL:dBZ,D{}-F{%Y%m%d%H%M%S}
+        CFRADIAL:RhoHV,D{}-F{%Y%m%d%H%M%S}
 	products STRUCT 2
         PPI_EL00 STRUCT 5
             type STRING PPI_CONTOUR_OVERPLOT
